@@ -1,0 +1,39 @@
+<styled-components naming convention>
+    최상위 부모
+        '컴포넌트명'Layout으로 생성
+
+    최상위 부모 자식(바로 하위 요소)
+        '컴포넌트명'Row or '컴포넌트명'Col
+        Row나 Col이라는 실질적인 태그는 div,section태그등이 될 수 있다.
+        Row는 가로, Col은 세로
+        둘 다 실제 태그는 div여도 flex-direction으로 설정
+
+    나머지 요소
+        div태그: '컴포넌트명'Box
+        section태그: 컴포넌트명'Section
+        ul태그: 컴포넌트명'List
+        li태그: 컴포넌트명'Item
+        p태그: 컴포넌트명'Paragraph
+        span태그: 컴포넌트명'Span or '컴포넌트명'Text
+
+    지양할 사항
+        Styled'컴포넌트명': 앞에 Styled 사용을 지양할 것
+        ~~Wrapper: div태그 같은것에는 사용하지만 이 대신 Box라는 이름을 사용한다.
+
+
+
+<git commit message convention>
+    feat : 새로운 기능 추가, 기존의 기능을 요구 사항에 맞추어 수정
+    fix : 기능에 대한 버그 수정
+    build : 빌드 관련 수정
+    chore : 패키지 매니저 수정, 그 외 기타 수정 ex) .gitignore
+    ci : CI 관련 설정 수정
+    docs : 문서(주석) 수정
+    style : 코드 스타일, 포맷팅에 대한 수정
+    refactor : 기능의 변화가 아닌 코드 리팩터링 ex) 변수 이름 변경
+    test : 테스트 코드 추가/수정
+    release : 버전 릴리즈
+
+<folder and file name convention>
+    Components 파일명은 pascal case
+    Non-Components 파일명은 camel case 
