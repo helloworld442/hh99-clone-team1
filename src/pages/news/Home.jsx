@@ -1,4 +1,4 @@
-import Header from "../../features/common/Header";
+import Header from "../../features/common/Header/Header";
 import Layout from "../../features/common/Layout";
 import { NewsItem, NewsList } from "../../features/news/newslist/NewsList";
 
