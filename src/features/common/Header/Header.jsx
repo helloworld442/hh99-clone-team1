@@ -11,6 +11,7 @@ import {
 
 const Header = () => {
   console.log("YEAH!");
+  console.log("YEAHYEAH");
   return (
     <HeaderCol>
       <HeaderNav />
