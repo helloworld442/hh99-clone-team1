@@ -1,7 +1,14 @@
-import { StNavListBox } from "./style";
+import Card from "../../common/Card/Card";
+import { StNavList, StNavListBox } from "./style";
 
-const NewsList = () => {
-  return <StNavListBox></StNavListBox>;
+export const NewsList = ({ children }) => {
+  return (
+    <StNavListBox>
+      <StNavList>{children}</StNavList>
+    </StNavListBox>
+  );
 };
 
-const NewsItem = () => {};
+export const NewsItem = () => {
+  return <Card />;
+};

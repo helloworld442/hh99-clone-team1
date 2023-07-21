@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import navLogo from "../../assets/logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
+import { UserOutlined, SearchOutlined } from "@ant-design/icons";
 
-const StHeaderCol = styled.div`
+const HeaderCol = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,11 +31,16 @@ const StHeaderNav = styled.nav`
   #nav-user {
     position: absolute;
     right: 10%;
-    padding: 10px 0;
     border: 1px solid #333;
+    display: flex;
+    align-items: center;
     .nav-link {
+      width: 50px;
+      height: 50px;
       font-size: 1.4rem;
-      padding: 10px 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .nav-link:first-child {
       border-right: 1px solid #333;
@@ -58,17 +62,20 @@ const HeaderCatagoryList = styled.ul`
 
 const HeaderCatagoryItem = styled.li`
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 500;
   padding: 20px 10px;
   margin: 0 10px;
+  &:hover {
+    color: #ff6b00;
+  }
 `;
 
 const Header = () => {
   return (
-    <StHeaderCol>
+    <HeaderCol>
       <HeaderNav />
       <HeaderCatagory />
-    </StHeaderCol>
+    </HeaderCol>
   );
 };
 
@@ -82,10 +89,10 @@ const HeaderNav = () => {
       {/* 헤더 유저 및 검색창 버튼 부분 */}
       <div id="nav-user">
         <Link className="nav-link">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <SearchOutlined />
         </Link>
         <Link className="nav-link">
-          <FontAwesomeIcon icon={faUser} />
+          <UserOutlined />
         </Link>
       </div>
     </StHeaderNav>
