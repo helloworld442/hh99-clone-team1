@@ -10,6 +10,7 @@ import {
 } from "./style";
 
 const Header = () => {
+  console.log("YEAH!");
   return (
     <HeaderCol>
       <HeaderNav />
