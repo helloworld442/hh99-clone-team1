@@ -1,5 +1,12 @@
+import Header from "../../features/common/Header";
+import Layout from "../../features/common/Layout";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <Layout>
+      <Header />
+    </Layout>
+  );
 };
 
 export default Home;
