@@ -39,7 +39,7 @@ const HeaderNav = () => {
 };
 
 const HeaderCatagory = () => {
-  const arr = ["태크", "환경", "경제", "연애", "인권", "사회", "문화"];
+  const arr = ["태크", "환경", "경제", "연애", "인권", "사회", "문화", "건강"];
   return (
     <HeaderCatagoryBox>
       <HeaderCatagoryList>
