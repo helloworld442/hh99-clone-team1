@@ -16,8 +16,6 @@ const HeaderNav = () => {
   );
 };
 
-const NavContext = createContext();
-
 export const NavLogo = ({ location }) => {
   return (
     <HeaderNavLogoLink href={location}>
@@ -25,6 +23,8 @@ export const NavLogo = ({ location }) => {
     </HeaderNavLogoLink>
   );
 };
+
+const NavContext = createContext();
 
 const NavContainer = ({ children }) => {
   return <NavContext.Provider>{children}</NavContext.Provider>;

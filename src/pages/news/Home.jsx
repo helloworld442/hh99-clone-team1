@@ -1,7 +1,7 @@
-import HeaderCatagory from "../../features/common/Header/HeadeCatagory";
+import Layout from "../../features/common/Layout";
 import Header from "../../features/common/Header/Header";
 import HeaderNav from "../../features/common/Header/HeaderNav";
-import Layout from "../../features/common/Layout";
+import HeaderCatagory from "../../features/common/Header/HeadeCatagory";
 import { NewsItem, NewsList } from "../../features/news/newslist/NewsList";
 
 const Home = () => {
