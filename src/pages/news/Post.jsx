@@ -6,7 +6,7 @@ import {
   NewsItem,
   NewsList,
 } from "../../features/news/newslist/NewsList";
-import { NewsListCol } from "../../features/news/newslist/style";
+import { NewsListBox } from "../../features/news/newslist/style";
 
 const Post = () => {
   return (
@@ -14,7 +14,7 @@ const Post = () => {
       <Header>
         <HeaderNav />
       </Header>
-      <NewsListCol>
+      <NewsListBox>
         <NewsInfoBox />
         <NewsList>
           <NewsItem />
@@ -30,7 +30,7 @@ const Post = () => {
           <NewsItem />
           <NewsItem />
         </NewsList>
-      </NewsListCol>
+      </NewsListBox>
     </Layout>
   );
 };

@@ -3,7 +3,7 @@ import Header from "../../features/common/Header/Header";
 import HeaderNav from "../../features/common/Header/HeaderNav";
 import HeaderCatagory from "../../features/common/Header/HeadeCatagory";
 import { NewsItem, NewsList } from "../../features/news/newslist/NewsList";
-import { NewsListCol } from "../../features/news/newslist/style";
+import { NewsListBox } from "../../features/news/newslist/style";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
         <HeaderNav />
         <HeaderCatagory />
       </Header>
-      <NewsListCol>
+      <NewsListBox>
         <NewsList>
           <NewsItem />
           <NewsItem />
@@ -27,7 +27,7 @@ const Home = () => {
           <NewsItem />
           <NewsItem />
         </NewsList>
-      </NewsListCol>
+      </NewsListBox>
     </Layout>
   );
 };

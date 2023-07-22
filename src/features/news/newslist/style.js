@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const NewsListCol = styled.div`
+export const NewsListBox = styled.div`
   width: 100vw;
   padding: 0 5%;
   box-sizing: border-box;
