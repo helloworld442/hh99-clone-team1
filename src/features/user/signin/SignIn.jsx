@@ -12,10 +12,10 @@ import {
 } from "./style";
 import {useNavigate} from "react-router-dom";
 import {useMutation} from "react-query";
-import {userLogin} from "../../../../api/user";
+import {userLogin} from "../../../api/user";
 import React, {useState} from "react";
-import Logo from "../../../../assets/logo.png";
-import {NavLogo} from "../../../../features/common/Header/HeaderNav";
+import Logo from "../../../assets/logo.png";
+import {NavLogo} from "../../common/Header/HeaderNav";
 
 const SignIn = () => {
   const navigate = useNavigate();
