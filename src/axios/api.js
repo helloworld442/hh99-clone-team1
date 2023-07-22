@@ -37,8 +37,10 @@ instance.interceptors.response.use(
       console.log("액세스토큰이 유효하지 않습니다.");
       originalRequest._retry = true;
       try {
-        const { data } = await instance.get(
-          `${import.meta.env.VITE_APP_LOCAL_SERVER}/refreshToken`
+        const refreshToken = localStorage.getItem("refreshToken");
+        const {data} = await instance.get(
+          `${import.meta.env.VITE_APP_LOCAL_SERVER}/refreshToken`,
+          {headers: {"Authorization": "Bearer " + refreshToken}}
         );
         localStorage.setItem("accessToken", data.accesstoken);
         originalRequest.headers["Authorization"] = "Bearer " + data.accesstoken;

@@ -13,13 +13,13 @@ const userSlice = createSlice({
   reducers: {
     LOGIN_USER: (state, action) => {
       state.user.email=action.payload.email
-      state.user.nickName=action.payload.nickname
+      state.user.nickname=action.payload.nickname
       localStorage.setItem('accessToken', action.payload.accesstoken);
       localStorage.setItem('refreshToken', action.payload.refreshtoken);
     },
     AUTH_USER: (state, action) => {
       state.user.email=action.payload.email
-      state.user.nickName=action.payload.nickname
+      state.user.nickname=action.payload.nickname
     },
     LOGOUT_USER: (state) => {
       state.user.email=null
