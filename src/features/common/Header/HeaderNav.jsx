@@ -7,7 +7,7 @@ import { createContext } from "react";
 const HeaderNav = () => {
   return (
     <HeaderNavBox>
-      <NavLogo location="/" />
+      <NavLogo location="/" icon={navLogo} />
       <NavContainer>
         <NavButton />
         <NavContent />
@@ -16,10 +16,15 @@ const HeaderNav = () => {
   );
 };
 
-export const NavLogo = ({ location }) => {
+/**
+ * @param {string} location 로고 클릭시 갈 위치
+ * @param {object} icon 로고에 들어갈 아이콘
+ */
+
+export const NavLogo = ({ location, icon }) => {
   return (
     <HeaderNavLogoLink href={location}>
-      <img src={navLogo} />
+      <img src={icon} />
     </HeaderNavLogoLink>
   );
 };
