@@ -38,7 +38,7 @@ const NavContainer = ({ children }) => {
 const NavButton = () => {
   return (
     <HeaderNavButtonBox>
-      <Link className="nav-link">
+      <Link className="nav-link" to="/search">
         <SearchOutlined />
       </Link>
       <Link className="nav-link">
