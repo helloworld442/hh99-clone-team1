@@ -4,7 +4,7 @@ import { UserOutlined, SearchOutlined } from "@ant-design/icons";
 import { HeaderNavBox, HeaderNavButtonBox, HeaderNavLogoLink } from "./style";
 import { createContext } from "react";
 
-const HeaderNav = () => {
+const NewsHeaderNav = () => {
   return (
     <HeaderNavBox>
       <NavLogo location="/" icon={navLogo} />
@@ -52,4 +52,4 @@ const NavContent = () => {
   return null;
 };
 
-export default HeaderNav;
+export default NewsHeaderNav;

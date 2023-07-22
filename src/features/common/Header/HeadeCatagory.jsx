@@ -19,7 +19,7 @@ const arr = [
   { title: "노동", src: "/" },
 ];
 
-const HeaderCatagory = () => {
+const NewsHeaderCatagory = () => {
   return (
     <HeaderCatagoryBox>
       <HeaderCatagoryList>
@@ -33,4 +33,4 @@ const HeaderCatagory = () => {
   );
 };
 
-export default HeaderCatagory;
+export default NewsHeaderCatagory;

@@ -1,17 +1,17 @@
+import { createContext } from "react";
 import Card from "../../common/Card/Card";
 import {
   NewsInfoButton,
   NewsInfoText,
+  NewsListBox,
   StNewsInfoBox,
   StNewsList,
 } from "./style";
 
-export const NewsList = ({ children }) => {
-  return <StNewsList>{children}</StNewsList>;
-};
+const NewsListContext = createContext();
 
-export const NewsItem = () => {
-  return <Card />;
+export const NewsContainer = ({ children }) => {
+  return <NewsListContext.Provider>{children}</NewsListContext.Provider>;
 };
 
 export const NewsInfoBox = () => {
@@ -24,4 +24,29 @@ export const NewsInfoBox = () => {
       <NewsInfoButton>최신순</NewsInfoButton>
     </StNewsInfoBox>
   );
+};
+
+export const NewsList = () => {
+  return (
+    <NewsListBox>
+      <StNewsList>
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+      </StNewsList>
+    </NewsListBox>
+  );
+};
+
+export const NewsItem = () => {
+  return <Card />;
 };

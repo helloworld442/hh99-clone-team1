@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const FooterBox = styled.div`
+export const NewsFooter = styled.div`
   padding: 2rem 0;
   text-align: center;
 `;

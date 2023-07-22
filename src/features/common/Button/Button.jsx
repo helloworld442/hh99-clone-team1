@@ -46,6 +46,6 @@ const StyledAddButton = styled.button`
   }
 `;
 
-export const AddButton = (props) => <StyledAddButton {...props} />;
+export const NewsAddButton = (props) => <StyledAddButton {...props} />;
 
 export const AuthButton = (props) => <StyledAuthButton {...props} />;

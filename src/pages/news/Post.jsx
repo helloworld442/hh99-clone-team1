@@ -1,36 +1,26 @@
 import Layout from "../../features/common/Layout";
-import Header from "../../features/common/Header/Header";
 import HeaderNav from "../../features/common/Header/HeaderNav";
-import {
-  NewsInfoBox,
-  NewsItem,
-  NewsList,
-} from "../../features/news/newslist/NewsList";
-import { NewsListBox } from "../../features/news/newslist/style";
+import NewsHeader from "../../features/common/Header/Header";
+import { NewsContainer, NewsList } from "../../features/news/newslist/NewsList";
+import { NewsFooter } from "../../features/common/Footer/Footer";
+import { NewsAddButton } from "../../features/common/Button/Button";
 
 const Post = () => {
   return (
     <Layout>
-      <Header>
+      {/* 헤더 영역 */}
+      <NewsHeader>
         <HeaderNav />
-      </Header>
-      <NewsListBox>
+      </NewsHeader>
+      {/* 컨테이너 영역 */}
+      <NewsContainer>
         <NewsInfoBox />
-        <NewsList>
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-        </NewsList>
-      </NewsListBox>
+        <NewsList />
+      </NewsContainer>
+      {/* 푸터 영역 */}
+      <NewsFooter>
+        <NewsAddButton />
+      </NewsFooter>
     </Layout>
   );
 };
