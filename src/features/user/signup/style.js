@@ -40,10 +40,6 @@ export const StyledHeader = styled.header`
   justify-content: center;
   align-items: center;
 `;
-export const StyledA = styled.a`
-  display: block;
-  width: 60%;
-  `;
 export const StyledButton = styled.button`
   min-width: 104px;
   padding: 10px 1.5rem 11px;
@@ -120,4 +116,51 @@ export const StyledSpan = styled.span`
   width: 24px;
   height: 24px;
   margin-right: 1rem;
+`;
+
+export const StyledA = styled.a`
+    display: inline !important;
+    margin: 0 !important;
+    text-decoration: underline;
+    color: #051619;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  position: absolute;
+`;
+
+export const StyledFieldset = styled.fieldset`
+    margin: 0;
+    padding: 0;
+    border: 0;
+`;
+
+export const StyledCheckboxContainer = styled.div`
+  display: flex;
+  padding: 0.25rem 0; // 세로 간격 조절
+  position: relative;
+  justify-content: space-between; /* 추가 */
+  align-items: center;
+`;
+
+export const StyledLabel = styled.label`
+  cursor: default;
+  margin-right: auto;
+  margin-left: 15px;
+  font-weight: bold; // 글자 굵기 조절
+`;
+
+export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 3px 3px 3px 4px;
+  padding: initial;
+  border: initial;
+  display: block;
+  height: 16px;
+  line-height: 16px;
+  position: relative;
 `;
