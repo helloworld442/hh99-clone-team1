@@ -11,7 +11,7 @@ import {
 import {StyledA, StyledCheckbox, StyledCheckboxContainer, StyledFieldset, StyledLabel} from "./style";
 import {NavLogo} from "../../../../features/common/Header/HeaderNav";
 import Logo from "../../../../assets/logo.png";
-import {useMutation, useQueryClient} from "react-query";
+import {useMutation} from "react-query";
 import {userSignUp} from "../../../../api/user";
 import {useNavigate} from "react-router-dom";
 
@@ -20,6 +20,11 @@ const SignUp = () => {
   const mutation = useMutation(userSignUp, {
     onSuccess: () => {
       navigate("/SignIn");
+    },
+    onError: (error) => {
+      if (error.response && error.response.data) {
+        setError(prev => ({ ...prev, nickname: error.response.data }));
+      }
     },
   });
 
@@ -84,13 +89,12 @@ const SignUp = () => {
   };
 
   const isNicknameValid = (nickname) => {
-    // 닉네임이 1글자 이상의 한글 또는 2글자 이상의 영문으로 이루어져 있는지 확인
-    const regex = /^[가-힣]{1,}|[a-zA-Z]{2,}$/;
+    const regex = /([가-힣]{1,}|[a-zA-Z]{2,})/;
     return regex.test(nickname);
   };
 
   const isFormValid = () => {
-    return form.email && form.password && form.passwordConfirm && form.nickname && checked.all;
+    return checked.all;
   };
 
   const submitUser = (event) => {
@@ -98,30 +102,40 @@ const SignUp = () => {
 
     let errors = {};
 
-    if (!isEmailValid(form.email)) {
-      errors.email = '올바른 이메일 형식이 아닙니다.';
+    if (!form.email) {
+      errors.email = '이메일 주소를 입력해주세요.';
+    } else if (!isEmailValid(form.email)) {
+      errors.email = '이메일 형식이 아니에요!';
     }
 
-    if (!isPasswordValid(form.password)) {
-      errors.password = '비밀번호는 8자 이상이어야 합니다.';
+    if (!form.password) {
+      errors.password = '비밀번호를 입력해주세요.';
+    } else if (!isPasswordValid(form.password)) {
+      errors.password = '비밀번호는 8자 이상 가능해요.';
     }
 
-    if (!isPasswordValid(form.passwordConfirm)) {
-      errors.passwordConfirm = '비밀번호 확인은 8자 이상이어야 합니다.';
+    if (!form.passwordConfirm) {
+      errors.passwordConfirm = '비밀번호를 입력해주세요.';
+    } else if (!isPasswordValid(form.passwordConfirm)) {
+      errors.passwordConfirm = '비밀번호는 8자 이상 가능해요.';
     }
 
-    if (!isConFirmPasswordValid(form.password)) {
-        errors.password = '비밀번호가 달라요.';
-        errors.passwordConfirm = '비밀번호가 달라요.';
+    if (form.password !== form.passwordConfirm) {
+      errors.password = '비밀번호가 달라요.';
+      errors.passwordConfirm = '비밀번호가 달라요.';
     }
 
-    if (!isNicknameValid(form.nickname)) {
-      errors.nickname = '닉네임은 1글자 이상의 한글 또는 2글자 이상의 영문이어야 합니다.';
+    if (!form.nickname) {
+      errors.nickname = '이름을 입력해주세요.';
+    } else if (!isNicknameValid(form.nickname)) {
+      errors.nickname = '닉네임은 1글자 이상의 한글, 2글자 이상의 영문이어야 합니다.';
     }
 
     if (Object.keys(errors).length > 0) {
       setError(errors);
       return;
+    }else{
+      setError({email:'', password:'',passwordConfirm:'',nickname:''});
     }
 
     const sendData = {
@@ -144,7 +158,7 @@ const SignUp = () => {
           <StyledFieldset>
             <StyledTextField>
               <StyledInput type="email" name="email" placeholder="이메일" value={form.email} onChange={handleInputChange}/>
-              {error.password && <p style={{color: 'red'}}>{error.email}</p>}
+              {error.email && <p style={{color: 'red'}}>{error.email}</p>}
             </StyledTextField>
             <StyledTextField>
               <StyledInput type="password" name="password" placeholder="비밀번호 (8자 이상)" value={form.password}
