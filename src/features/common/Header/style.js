@@ -6,11 +6,7 @@ export const HeaderCol = styled.div`
   flex-direction: column;
 `;
 
-<<<<<<< HEAD
-export const StHeaderNav = styled.nav`
-=======
 export const HeaderNavBox = styled.div`
->>>>>>> c1bff1efca35b08c2d9b61fe3ddedc577da1a801
   position: relative;
   width: 100%;
   padding: 2.5rem;
@@ -19,35 +15,6 @@ export const HeaderNavBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-
-  #nav-logo {
-    width: 240px;
-    height: 34px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  #nav-user {
-    position: absolute;
-    right: 10%;
-    border: 1px solid #333;
-    display: flex;
-    align-items: center;
-    .nav-link {
-      width: 50px;
-      height: 50px;
-      font-size: 1.4rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .nav-link:first-child {
-      border-right: 1px solid #333;
-    }
-=======
 `;
 
 export const HeaderNavLogoLink = styled.a`
@@ -75,7 +42,6 @@ export const HeaderNavButtonBox = styled.div`
   }
   .nav-link:first-child {
     border-right: 1px solid #333;
->>>>>>> c1bff1efca35b08c2d9b61fe3ddedc577da1a801
   }
 `;
 
