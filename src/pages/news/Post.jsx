@@ -19,7 +19,7 @@ const Post = () => {
       </NewsContainer>
       {/* 푸터 영역 */}
       <NewsFooter>
-        <NewsAddButton />
+        <NewsAddButton>더보기</NewsAddButton>
       </NewsFooter>
     </Layout>
   );
