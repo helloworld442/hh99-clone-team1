@@ -33,4 +33,19 @@ const StyledAuthButton = styled.button`
   }
 `;
 
+const StyledAddButton = styled.button`
+  width: 300px;
+  height: 55px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.925rem;
+  &:hover {
+    background: #ff6b00;
+  }
+`;
+
+export const AddButton = (props) => <StyledAddButton {...props} />;
+
 export const AuthButton = (props) => <StyledAuthButton {...props} />;

@@ -4,6 +4,8 @@ import HeaderNav from "../../features/common/Header/HeaderNav";
 import HeaderCatagory from "../../features/common/Header/HeadeCatagory";
 import { NewsItem, NewsList } from "../../features/news/newslist/NewsList";
 import { NewsListBox } from "../../features/news/newslist/style";
+import { FooterBox } from "../../features/common/Footer/Footer";
+import { AddButton } from "../../features/common/Button/Button";
 
 const Home = () => {
   return (
@@ -28,6 +30,9 @@ const Home = () => {
           <NewsItem />
         </NewsList>
       </NewsListBox>
+      <FooterBox>
+        <AddButton>더보기</AddButton>
+      </FooterBox>
     </Layout>
   );
 };
