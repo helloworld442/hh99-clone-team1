@@ -21,7 +21,7 @@ const HeaderNav = () => {
  * @param {object} icon 로고에 들어갈 아이콘
  */
 
-export const NavLogo = ({ location, icon }) => {
+const NavLogo = ({ location, icon }) => {
   return (
     <HeaderNavLogoLink href={location}>
       <img src={icon} />
