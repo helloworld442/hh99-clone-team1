@@ -5,6 +5,7 @@ import HeaderCatagory from "../../features/common/Header/HeadeCatagory";
 import { NewsItem, NewsList } from "../../features/news/newslist/NewsList";
 
 const Home = () => {
+  console.log("hello world");
   return (
     <Layout>
       <Header>
