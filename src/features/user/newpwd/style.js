@@ -10,7 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     letter-spacing: -.0125rem;
-    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 14px;
     background: #eae7de;
     b, h1, h2, h3, h4, h5, h6, legend, strong, th {
       font-weight: 700;

@@ -18,7 +18,7 @@ const Router = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot" element={<ForgotPwd />} />
-        <Route path="/newPassword/:resignToken" element={<NewPwd/>} />
+        <Route path="/newPassword" element={<NewPwd/>} />
       </Routes>
     </BrowserRouter>
   );
