@@ -21,7 +21,7 @@ const HeaderNav = () => {
  * @param {object} icon 로고에 들어갈 아이콘
  */
 
-const NavLogo = ({ location, icon }) => {
+export const NavLogo = ({ location, icon }) => {
   return (
     <HeaderNavLogoLink href={location}>
       <img src={icon} />
@@ -41,7 +41,7 @@ const NavButton = () => {
       <Link className="nav-link" to="/search">
         <SearchOutlined />
       </Link>
-      <Link className="nav-link">
+      <Link className="nav-link" to="/signin">
         <UserOutlined />
       </Link>
     </HeaderNavButtonBox>
