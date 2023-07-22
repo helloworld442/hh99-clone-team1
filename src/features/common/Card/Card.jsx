@@ -7,6 +7,9 @@ const StCardBox = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 1 300px;
+  &:hover {
+    background: #fff;
+  }
 `;
 
 const StCardImg = styled.img`

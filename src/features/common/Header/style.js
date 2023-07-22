@@ -6,7 +6,7 @@ export const HeaderCol = styled.div`
   flex-direction: column;
 `;
 
-export const StHeaderNav = styled.nav`
+export const HeaderNavBox = styled.div`
   position: relative;
   width: 100%;
   padding: 2.5rem;
@@ -15,33 +15,33 @@ export const StHeaderNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
 
-  #nav-logo {
-    width: 240px;
-    height: 34px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
+export const HeaderNavLogoLink = styled.a`
+  width: 240px;
+  height: 34px;
+  img {
+    width: 100%;
+    height: 100%;
   }
+`;
 
-  #nav-user {
-    position: absolute;
-    right: 10%;
-    border: 1px solid #333;
+export const HeaderNavButtonBox = styled.div`
+  position: absolute;
+  right: 5%;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  .nav-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
     display: flex;
+    justify-content: center;
     align-items: center;
-    .nav-link {
-      width: 50px;
-      height: 50px;
-      font-size: 1.4rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .nav-link:first-child {
-      border-right: 1px solid #333;
-    }
+  }
+  .nav-link:first-child {
+    border-right: 1px solid #333;
   }
 `;
 
