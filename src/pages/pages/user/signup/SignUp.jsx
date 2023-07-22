@@ -84,10 +84,6 @@ const SignUp = () => {
     return password.length >= 8;
   };
 
-  const isConFirmPasswordValid = (password) => {
-    return password === form.passwordConfirm;
-  };
-
   const isNicknameValid = (nickname) => {
     const regex = /([가-힣]{1,}|[a-zA-Z]{2,})/;
     return regex.test(nickname);

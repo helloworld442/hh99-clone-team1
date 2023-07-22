@@ -13,7 +13,9 @@ import {
 import {useNavigate} from "react-router-dom";
 import {useMutation} from "react-query";
 import {userLogin} from "../../../../api/user";
-import {useState} from "react";
+import React, {useState} from "react";
+import Logo from "../../../../assets/logo.png";
+import {NavLogo} from "../../../../features/common/Header/HeaderNav";
 
 const SignIn = () => {
 
@@ -59,12 +61,16 @@ const SignIn = () => {
     event.preventDefault();
     let errors = {};
 
-    if (!isEmailValid(form.email)) {
-      errors.email = '올바른 이메일 형식이 아닙니다.';
+    if (!form.email) {
+      errors.email = '이메일 주소를 입력해주세요.';
+    } else if (!isEmailValid(form.email)) {
+      errors.email = '이메일 형식이 아니에요!';
     }
 
-    if (!isPasswordValid(form.password)) {
-      errors.password = '비밀번호는 8자 이상이어야 합니다.';
+    if (!form.password) {
+      errors.password = '비밀번호를 입력해주세요.';
+    } else if (!isPasswordValid(form.password)) {
+      errors.password = '비밀번호는 8자 이상 가능해요.';
     }
 
     if (Object.keys(errors).length > 0) {
@@ -87,10 +93,8 @@ const SignIn = () => {
       <GlobalStyle/>
       <StyledSection>
         <StyledForm name="login" onSubmit={submitLogin}>
-          <StyledHeader>
-            <StyledA href="/">
-              <img src="/src/assets/logo.png" style={{height: "34px", width: "240px"}} alt="뉴닉"/>
-            </StyledA>
+          <StyledHeader style={{marginBottom: "40px"}}>
+            <NavLogo location={"/"} icon={Logo}></NavLogo>
           </StyledHeader>
           <div role="group">
             <StyledButton type="button" className="login-social-google secondary-button">
