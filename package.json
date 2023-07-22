@@ -16,6 +16,10 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@reduxjs/toolkit": "^1.9.5",
+<<<<<<< HEAD
+    "antd": "^5.7.2",
+=======
+>>>>>>> c1bff1efca35b08c2d9b61fe3ddedc577da1a801
     "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

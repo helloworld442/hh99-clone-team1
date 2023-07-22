@@ -1,5 +1,6 @@
+import NewsSearch from "../../features/news/newssearch/NewsSearch";
 const Search = () => {
-  return <div>detail</div>;
+  return <NewsSearch />;
 };
 
 export default Search;
