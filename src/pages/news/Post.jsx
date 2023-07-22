@@ -1,18 +1,21 @@
 import Layout from "../../features/common/Layout";
 import Header from "../../features/common/Header/Header";
 import HeaderNav from "../../features/common/Header/HeaderNav";
-import HeaderCatagory from "../../features/common/Header/HeadeCatagory";
-import { NewsItem, NewsList } from "../../features/news/newslist/NewsList";
+import {
+  NewsInfoBox,
+  NewsItem,
+  NewsList,
+} from "../../features/news/newslist/NewsList";
 import { NewsListCol } from "../../features/news/newslist/style";
 
-const Home = () => {
+const Post = () => {
   return (
     <Layout>
       <Header>
         <HeaderNav />
-        <HeaderCatagory />
       </Header>
       <NewsListCol>
+        <NewsInfoBox />
         <NewsList>
           <NewsItem />
           <NewsItem />
@@ -32,4 +35,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Post;

@@ -1,6 +1,11 @@
+import Layout from "../../features/common/Layout";
 import NewsSearch from "../../features/news/newssearch/NewsSearch";
 const Search = () => {
-  return <NewsSearch />;
+  return (
+    <Layout>
+      <NewsSearch />
+    </Layout>
+  );
 };
 
 export default Search;
