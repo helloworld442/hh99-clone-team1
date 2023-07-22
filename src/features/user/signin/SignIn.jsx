@@ -1,12 +1,9 @@
 import {
   GlobalStyle,
-  PrimaryButton,
-  StyledA,
   StyledButton,
   StyledDevider,
   StyledForm,
   StyledHeader,
-  StyledInput,
   StyledSection,
   StyledSpan,
   StyledTextField,
@@ -17,6 +14,8 @@ import { userLogin } from "../../../api/user";
 import React, { useState } from "react";
 import Logo from "../../../assets/logo.png";
 import { NavLogo } from "../../../features/common/Header/HeaderNav";
+import { AuthInput } from "../../common/Input/Input";
+import { AuthButton } from "../../common/Button/Button";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -112,7 +111,7 @@ const SignIn = () => {
           </div>
           <StyledDevider role="separator"></StyledDevider>
           <StyledTextField>
-            <StyledInput
+            <AuthInput
               type="email"
               name="email"
               placeholder="이메일"
@@ -122,7 +121,7 @@ const SignIn = () => {
             {error.email && <p style={{ color: "red" }}>{error.email}</p>}
           </StyledTextField>
           <StyledTextField>
-            <StyledInput
+            <AuthInput
               type="password"
               name="password"
               placeholder="비밀번호"
@@ -145,9 +144,9 @@ const SignIn = () => {
             </a>
           </div>
           <footer style={{ margin: "1.5rem 0" }}>
-            <PrimaryButton type="submit" style={{ width: "100%" }}>
+            <AuthButton type="submit" style={{ width: "100%" }}>
               로그인
-            </PrimaryButton>
+            </AuthButton>
             <p
               className="login-option"
               style={{

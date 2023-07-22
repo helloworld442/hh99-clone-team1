@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import {
   GlobalStyle,
-  PrimaryButton,
   StyledHeader,
-  StyledInput,
   StyledSection,
   StyledTextField,
 } from "../signin/style";
@@ -20,6 +18,8 @@ import { NavLogo } from "../../../features/common/Header/HeaderNav";
 import { useMutation } from "react-query";
 import { userSignUp } from "../../../api/user";
 import { useNavigate } from "react-router-dom";
+import { AuthInput } from "../../common/Input/Input";
+import { AuthButton } from "../../common/Button/Button";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -160,7 +160,7 @@ const SignUp = () => {
           </StyledHeader>
           <StyledFieldset>
             <StyledTextField>
-              <StyledInput
+              <AuthInput
                 type="email"
                 name="email"
                 placeholder="이메일"
@@ -170,7 +170,7 @@ const SignUp = () => {
               {error.email && <p style={{ color: "red" }}>{error.email}</p>}
             </StyledTextField>
             <StyledTextField>
-              <StyledInput
+              <AuthInput
                 type="password"
                 name="password"
                 placeholder="비밀번호 (8자 이상)"
@@ -181,9 +181,8 @@ const SignUp = () => {
                 <p style={{ color: "red" }}>{error.password}</p>
               )}
             </StyledTextField>
-
             <StyledTextField>
-              <StyledInput
+              <AuthInput
                 type="password"
                 name="passwordConfirm"
                 placeholder="비밀번호 확인(8자 이상)"
@@ -195,7 +194,7 @@ const SignUp = () => {
               )}
             </StyledTextField>
             <StyledTextField>
-              <StyledInput
+              <AuthInput
                 type="text"
                 name="nickname"
                 placeholder="닉네임"
@@ -293,13 +292,13 @@ const SignUp = () => {
               </StyledA>
             </StyledCheckboxContainer>
           </StyledFieldset>
-          <PrimaryButton
+          <AuthButton
             type="submit"
             style={{ width: "100%", marginTop: "30px", border: "none" }}
             disabled={!isFormValid()}
           >
             가입하기
-          </PrimaryButton>
+          </AuthButton>
         </StyledForm>
       </StyledSection>
     </>

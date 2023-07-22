@@ -47,6 +47,7 @@ export const HeaderNavButtonBox = styled.div`
 
 export const HeaderCatagoryBox = styled.div`
   width: 100%;
+  border-top: 1px solid #333;
   border-bottom: 1px solid #333;
   background: #fff;
   display: flex;
