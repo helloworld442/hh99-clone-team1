@@ -1,4 +1,3 @@
-import Layout from "../../../features/common/Layout";
 import {
   GlobalStyle,
   PrimaryButton,
@@ -11,8 +10,76 @@ import {
   StyledSection, StyledSpan,
   StyledTextField
 } from "./style";
+import {useNavigate} from "react-router-dom";
+import {useMutation} from "react-query";
+import {userLogin} from "../../../../api/user";
+import {useState} from "react";
 
 const SignIn = () => {
+
+  const navigate = useNavigate();
+  const mutation = useMutation(userLogin, {
+    onSuccess: () => {
+      navigate("/SignIn");
+    },
+  });
+
+  const [error, setError] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleInputChange = (event) => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const isEmailValid = (email) => {
+    // Simple regular expression for email validation
+    const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    return emailRegex.test(email);
+  };
+
+  const isPasswordValid = (password) => {
+    return password.length >= 8;
+  };
+
+  const isFormValid = () => {
+    return form.email && form.password;
+  };
+
+  const submitLogin = (event) => {
+    event.preventDefault();
+
+    let errors = {};
+
+    if (!isEmailValid(form.email)) {
+      errors.email = '올바른 이메일 형식이 아닙니다.';
+    }
+
+    if (!isPasswordValid(form.password)) {
+      errors.password = '비밀번호는 8자 이상이어야 합니다.';
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setError(errors);
+      return;
+    }
+
+    const sendData = {
+      email: form.email,
+      password: form.password,
+    }
+    mutation.mutate(sendData);
+  }
+
   return (
     <>
       <GlobalStyle/>

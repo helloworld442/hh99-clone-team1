@@ -1,5 +1,9 @@
 import styled, {createGlobalStyle} from "styled-components";
 
+export const GlobalFonts = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+`;
+
 export const GlobalStyle = createGlobalStyle`
   body{
     color: #051619;
@@ -110,7 +114,11 @@ export const PrimaryButton = styled.button`
   padding: 10px 1.5rem 11px;
   display: inline-block;
   min-width: 104px;
-  width: 100%
+  width: 100%;
+  &:disabled {
+    background-color: #cccccc;
+    color: #666666;
+  }
 `;
 
 export const StyledSpan = styled.span`
