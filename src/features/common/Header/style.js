@@ -52,6 +52,28 @@ export const HeaderNavButtonBox = styled.div`
   }
 `;
 
+export const HeaderNavContentList = styled.ul`
+  position: absolute;
+  top: 6rem;
+  right: 5%;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  z-index: 100;
+`;
+
+export const HeaderNavContentItem = styled.li`
+  width: 250px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #000;
+  background: #fff;
+  font-size: 0.915rem;
+  font-weight: 500;
+  &:last-child {
+    color: #b22222;
+  }
+`;
+
 export const HeaderTitleText = styled.h1`
   padding: 16px 10rem;
   margin: 0;
