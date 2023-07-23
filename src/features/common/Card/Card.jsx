@@ -8,6 +8,9 @@ const StCardBox = styled.div`
   flex-direction: column;
   &:hover {
     background: #fff;
+    img {
+      filter: grayscale(0);
+    }
   }
 `;
 
@@ -19,9 +22,6 @@ const StCardImg = styled.img`
   background: rgb(211, 211, 211);
   object-fit: cover;
   filter: grayscale(1);
-  &:hover {
-    filter: grayscale(0);
-  }
 `;
 
 const StCardText = styled.span`
