@@ -5,7 +5,7 @@ import {
   HeaderCatagoryList,
 } from "./style";
 
-const arr = [
+const catagoryList = [
   { title: "전체", src: "/" },
   { title: "⚖️정치", src: "/" },
   { title: "💰경제", src: "/" },
@@ -23,7 +23,7 @@ const NewsHeaderCatagory = () => {
   return (
     <HeaderCatagoryBox>
       <HeaderCatagoryList>
-        {arr.map((item, idx) => (
+        {catagoryList.map((item, idx) => (
           <HeaderCatagoryItem key={idx}>
             <Link to={"/posts" + item.src}>{item.title}</Link>
           </HeaderCatagoryItem>
