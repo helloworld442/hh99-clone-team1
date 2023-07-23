@@ -9,10 +9,10 @@ import {
   StyledTextField
 } from "../signin/style";
 import {StyledA, StyledCheckbox, StyledCheckboxContainer, StyledFieldset, StyledLabel} from "./style";
-import {NavLogo} from "../../../../features/common/Header/HeaderNav";
-import Logo from "../../../../assets/logo.png";
+import {NavLogo} from "../../common/Header/HeaderNav";
+import Logo from "../../../assets/logo.png";
 import {useMutation} from "react-query";
-import {userSignUp} from "../../../../api/user";
+import {userSignUp} from "../../../api/user";
 import {useNavigate} from "react-router-dom";
 
 const SignUp = () => {
