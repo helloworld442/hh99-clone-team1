@@ -1,13 +1,14 @@
 import {
+  HeaderNavBackground,
   HeaderNavBox,
   HeaderNavButtonBox,
   HeaderNavContentItem,
   HeaderNavContentList,
   HeaderNavLogoLink,
 } from "./style";
-import { Link } from "react-router-dom";
 import navLogo from "../../../assets/logo.png";
 import { UserOutlined, SearchOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 
 const NewsHeaderNav = () => {
@@ -64,13 +65,16 @@ const NavButton = () => {
 };
 
 const NavContent = () => {
-  const { isOpen } = useContext(NavContext);
+  const { isOpen, onToggleNav } = useContext(NavContext);
   return isOpen ? (
-    <HeaderNavContentList>
-      <HeaderNavContentItem>마이페이지</HeaderNavContentItem>
-      <HeaderNavContentItem>프로필 설정</HeaderNavContentItem>
-      <HeaderNavContentItem>로그아웃</HeaderNavContentItem>
-    </HeaderNavContentList>
+    <>
+      <HeaderNavBackground onClick={onToggleNav} />
+      <HeaderNavContentList>
+        <HeaderNavContentItem>마이페이지</HeaderNavContentItem>
+        <HeaderNavContentItem>프로필 설정</HeaderNavContentItem>
+        <HeaderNavContentItem>로그아웃</HeaderNavContentItem>
+      </HeaderNavContentList>
+    </>
   ) : null;
 };
 

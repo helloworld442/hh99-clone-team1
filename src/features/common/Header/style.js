@@ -55,6 +55,14 @@ export const HeaderNavButtonBox = styled.div`
   }
 `;
 
+export const HeaderNavBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+`;
+
 export const HeaderNavContentList = styled.ul`
   position: absolute;
   top: 6rem;
