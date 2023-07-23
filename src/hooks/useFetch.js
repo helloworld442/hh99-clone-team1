@@ -9,11 +9,9 @@ const useFetch = (promiseCreator, req) => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      setTimeout(async () => {
-        const data = await promiseCreator(req);
-        setSuccess(data);
-        setLoading(false);
-      }, 500);
+      const data = await promiseCreator(req);
+      setSuccess(data);
+      setLoading(false);
     } catch (e) {
       setError(e);
       setLoading(false);
