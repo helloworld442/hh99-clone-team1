@@ -52,12 +52,15 @@ const NavContainer = ({ children }) => {
 
 const NavButton = () => {
   const { onToggleNav } = useContext(NavContext);
+  let path = "/signin";
+  if (localStorage.getItem("accessToken")) path = "#";
+
   return (
     <HeaderNavButtonBox>
       <Link className="nav-link" to="/search">
         <SearchOutlined />
       </Link>
-      <Link className="nav-link" to="/signin">
+      <Link className="nav-link" to={path} onClick={onToggleNav}>
         <UserOutlined />
       </Link>
     </HeaderNavButtonBox>

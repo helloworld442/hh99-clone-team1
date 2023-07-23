@@ -16,6 +16,8 @@ import Logo from "../../../assets/logo.png";
 import { NavLogo } from "../../common/Header/HeaderNav";
 import { useDispatch } from "react-redux";
 import { LOGIN_USER } from "../../../redux/reducers/userSlice";
+import { AuthInput } from "../../common/Input/Input";
+import { AuthButton } from "../../common/Button/Button";
 
 const SignIn = () => {
   const navigate = useNavigate();
