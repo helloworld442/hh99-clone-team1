@@ -7,6 +7,7 @@ import SignUp from "../features/user/signup/SignUp";
 import ForgotPwd from "../features/user/forgotpwd/ForgotPwd";
 import NewPwd from "../features/user/newpwd/NewPwd";
 import Post from "../pages/news/Post";
+import Profile from "../features/user/profile/Profile";
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot" element={<ForgotPwd />} />
         <Route path="/newPassword" element={<NewPwd/>} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
     </BrowserRouter>
   );

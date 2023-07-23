@@ -20,6 +20,16 @@ const getNewPwd = async (password) => {
   return response.data;
 };
 
+const getReadList = async (userEmail) => {
+  const response = await api.get(`/api/user/read/${userEmail}`);
+  return response.data;
+}
+
+const getLikeList = async (userEmail) => {
+  const response = await api.get(`/api/user/like/${userEmail}`);
+  return response.data;
+}
+
 const getAuthToken = async ()=> {
   const response = await api.get(`/api/user/token`);
   return response.data;
@@ -43,4 +53,6 @@ export {
   getAuthToken,
   updateUser,
   deleteUser,
+  getReadList,
+  getLikeList,
 };
