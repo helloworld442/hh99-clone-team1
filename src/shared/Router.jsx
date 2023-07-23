@@ -6,6 +6,7 @@ import SignIn from "../features/user/signin/SignIn";
 import SignUp from "../features/user/signup/SignUp";
 import ForgotPwd from "../features/user/forgotpwd/ForgotPwd";
 import NewPwd from "../features/user/newpwd/NewPwd";
+import Post from "../pages/news/Post";
 
 const Router = () => {
   return (
@@ -13,8 +14,8 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<Detail />} />
-        <Route path="/posts/:postId" element={<Home />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/search/posts/:postId" element={<Post />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot" element={<ForgotPwd />} />
