@@ -9,6 +9,7 @@ import {
 } from "./style";
 import useFetch from "../../../hooks/useFetch";
 import { getMainNews } from "../../../api/news";
+import Spinner from "../../common/Spinner/Spinner";
 
 export const NewsListContext = createContext();
 
@@ -35,6 +36,10 @@ export const NewsContainer = ({ children }) => {
   }, [result.success]);
 
   const onClickButton = () => setPage(page + 1);
+
+  if (result.loading) {
+    return <Spinner />;
+  }
 
   return (
     <NewsListContext.Provider value={{ data, show, onClickButton }}>
