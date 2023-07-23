@@ -5,6 +5,7 @@ import {
   StyledSection,
   StyledTextField,
 } from "../signin/style";
+<<<<<<< HEAD
 import {
   StyledForm,
   StyledA,
@@ -20,6 +21,14 @@ import { userSignUp } from "../../../api/user";
 import { useNavigate } from "react-router-dom";
 import { AuthInput } from "../../common/Input/Input";
 import { AuthButton } from "../../common/Button/Button";
+=======
+import {StyledA, StyledCheckbox, StyledCheckboxContainer, StyledFieldset, StyledLabel} from "./style";
+import {NavLogo} from "../../common/Header/HeaderNav";
+import Logo from "../../../assets/logo.png";
+import {useMutation} from "react-query";
+import {userSignUp} from "../../../api/user";
+import {useNavigate} from "react-router-dom";
+>>>>>>> origin/features/SignIn
 
 const SignUp = () => {
   const navigate = useNavigate();

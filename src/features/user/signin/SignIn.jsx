@@ -11,16 +11,18 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
 import { userLogin } from "../../../api/user";
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../../../assets/logo.png";
-import { NavLogo } from "../../../features/common/Header/HeaderNav";
-import { AuthInput } from "../../common/Input/Input";
-import { AuthButton } from "../../common/Button/Button";
+import { NavLogo } from "../../common/Header/HeaderNav";
+import { useDispatch } from "react-redux";
+import { LOGIN_USER } from "../../../redux/reducers/userSlice";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const mutation = useMutation(userLogin, {
-    onSuccess: () => {
+    onSuccess: (data) => {
+      dispatch(LOGIN_USER(data));
       navigate("/");
     },
     onError: (error) => {

@@ -14,8 +14,9 @@ const getForgotPwd = async (email) => {
   return response.data;
 };
 
-const getNewPwd = async (secretemail) => {
-  const response = await api.get(`api/pwd/newPassword/${secretemail}`);
+const getNewPwd = async (password) => {
+  const secretemail = localStorage.getItem('resignToken');
+  const response = await api.post(`api/pwd/newPassword/${secretemail}`, {password});
   return response.data;
 };
 
