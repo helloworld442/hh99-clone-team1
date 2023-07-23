@@ -38,8 +38,6 @@ export const Icon = styled(ArrowLeftOutlined)`
   top: 0;
   z-index: 12121;
   outline: none;
-  &:hover {
-  }
 `;
 export const StNewsSearchInput = styled.input`
   width: 100%;
