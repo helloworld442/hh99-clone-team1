@@ -57,7 +57,6 @@ export const NewsInfoBox = () => {
 
 export const NewsList = () => {
   const { data } = useContext(NewsListContext);
-  console.log(data);
   return (
     <NewsListBox>
       <StNewsList>

@@ -57,7 +57,7 @@ const NavButton = () => {
       <Link className="nav-link" to="/search">
         <SearchOutlined />
       </Link>
-      <Link className="nav-link" onClick={onToggleNav}>
+      <Link className="nav-link" to="/signin">
         <UserOutlined />
       </Link>
     </HeaderNavButtonBox>
