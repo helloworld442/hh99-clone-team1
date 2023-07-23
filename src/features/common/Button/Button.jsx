@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { styled } from "styled-components";
+import { NewsListContext } from "../../news/newslist/NewsList";
 
 const StyledAuthButton = styled.button`
   appearance: auto;
@@ -52,10 +54,13 @@ const StyledAddButton = styled.button`
   }
 `;
 
-export const NewsAddButton = (props) => {
+export const NewsAddButton = () => {
+  const { show, onClickButton } = useContext(NewsListContext);
   return (
     <StyledAddButtonBox>
-      <StyledAddButton {...props}>더보기</StyledAddButton>
+      {show ? (
+        <StyledAddButton onClick={onClickButton}>더보기</StyledAddButton>
+      ) : null}
     </StyledAddButtonBox>
   );
 };

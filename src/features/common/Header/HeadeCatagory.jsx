@@ -23,8 +23,8 @@ const NewsHeaderCatagory = () => {
   return (
     <HeaderCatagoryBox>
       <HeaderCatagoryList>
-        {arr.map((item) => (
-          <HeaderCatagoryItem>
+        {arr.map((item, idx) => (
+          <HeaderCatagoryItem key={idx}>
             <Link to={"/posts" + item.src}>{item.title}</Link>
           </HeaderCatagoryItem>
         ))}

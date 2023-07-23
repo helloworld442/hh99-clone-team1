@@ -6,7 +6,6 @@ const StCardBox = styled.div`
   border-bottom: 1px solid #333;
   display: flex;
   flex-direction: column;
-  flex: 1 1 300px;
   &:hover {
     background: #fff;
   }
@@ -18,6 +17,11 @@ const StCardImg = styled.img`
   margin-bottom: 16px;
   border-bottom: 1px solid #333;
   background: rgb(211, 211, 211);
+  object-fit: cover;
+  filter: grayscale(1);
+  &:hover {
+    filter: grayscale(0);
+  }
 `;
 
 const StCardText = styled.span`
@@ -30,15 +34,21 @@ const StCardText = styled.span`
   }
 `;
 
-const Card = () => {
+/**
+ * @param {string} title card 제목
+ * @param {string} src card 이미지 주소
+ * @param {string} date 게시글 날짜
+ */
+
+const Card = ({ title, src, date }) => {
   return (
     <StCardBox>
-      <StCardImg />
+      <StCardImg src={src} />
       <StCardText size="1.2rem" weight="650">
-        '신종 펫숍' 사기 행각
+        {title}
       </StCardText>
       <StCardText size="0.9rem" weight="500">
-        2023/07/21 <span>사회</span>
+        {date} <span>사회</span>
       </StCardText>
     </StCardBox>
   );

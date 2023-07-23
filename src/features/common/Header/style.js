@@ -50,6 +50,9 @@ export const HeaderNavButtonBox = styled.div`
   .nav-link:first-child {
     border-right: 1px solid #333;
   }
+  @media screen and (max-width: 1079px) {
+    display: none;
+  }
 `;
 
 export const HeaderNavContentList = styled.ul`
@@ -79,6 +82,11 @@ export const HeaderTitleText = styled.h1`
   margin: 0;
   border-bottom: 1px solid #000;
   font-size: 2.6rem;
+  @media screen and (max-width: 1079px) {
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.2rem;
+  }
 `;
 
 export const HeaderDescBox = styled.div`
@@ -88,6 +96,9 @@ export const HeaderDescBox = styled.div`
   box-sizing: border-box;
   background: #ff6b00;
   overflow: hidden;
+  @media screen and (max-width: 1079px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 export const HeaderDescInnerBox = styled.div`
@@ -95,6 +106,11 @@ export const HeaderDescInnerBox = styled.div`
   padding: 0 10rem;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 1079px) {
+    max-width: 480px;
+    padding: 0;
+    margin: 0 auto;
+  }
 `;
 
 export const HeaderDescText = styled.span`
@@ -113,12 +129,20 @@ export const HeaderDescText = styled.span`
 export const HeaderDescForm = styled.form`
   max-width: 1200px;
   padding: 0 10rem;
+  @media screen and (max-width: 1079px) {
+    max-width: 480px;
+    padding: 0;
+    margin: 0 auto;
+  }
 `;
 
 export const HeaderDescInput = styled(AuthInput)`
   width: 450px;
   padding: 14px 20px;
   margin-bottom: 7px;
+  @media screen and (max-width: 1079px) {
+    width: 100%;
+  }
 `;
 
 export const HeaderDescCheckBox = styled(StyledCheckboxContainer)`
@@ -149,6 +173,9 @@ export const HeaderButtonBox = styled.div`
   margin-top: 50px;
   display: flex;
   gap: 10px;
+  @media screen and (max-width: 1079px) {
+    width: 100%;
+  }
 `;
 
 export const HeaderDescButton = styled(AuthButton)`
@@ -159,6 +186,9 @@ export const HeaderDescButton = styled(AuthButton)`
   &:first-child {
     color: #000;
     background: #fff;
+  }
+  @media screen and (max-width: 1079px) {
+    padding: 12px;
   }
 `;
 
@@ -171,6 +201,9 @@ export const HeaderDescImgBox = styled.div`
   img {
     width: 100%;
     height: auto;
+  }
+  @media screen and (max-width: 1079px) {
+    display: none;
   }
 `;
 
