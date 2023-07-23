@@ -6,10 +6,12 @@ export const NewsListBox = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const StNewsList = styled.ul`
   width: 100%;
+  max-width: 1300px;
   border-left: 1px solid #333;
   display: flex;
   flex-wrap: wrap;

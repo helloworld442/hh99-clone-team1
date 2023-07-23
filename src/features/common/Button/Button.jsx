@@ -33,9 +33,15 @@ const StyledAuthButton = styled.button`
   }
 `;
 
+const StyledAddButtonBox = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
 const StyledAddButton = styled.button`
   width: 300px;
   height: 55px;
+  margin-top: 2rem;
   background: #fff;
   border: 1px solid #000;
   border-radius: 8px;
@@ -46,6 +52,12 @@ const StyledAddButton = styled.button`
   }
 `;
 
-export const NewsAddButton = (props) => <StyledAddButton {...props} />;
+export const NewsAddButton = (props) => {
+  return (
+    <StyledAddButtonBox>
+      <StyledAddButton {...props}>더보기</StyledAddButton>
+    </StyledAddButtonBox>
+  );
+};
 
 export const AuthButton = (props) => <StyledAuthButton {...props} />;

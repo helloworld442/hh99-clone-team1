@@ -40,8 +40,8 @@ const NewsHeaderDesc = () => {
           </HeaderDescLabel>
         </HeaderDescCheckBox>
         <HeaderDescCheckBox>
-          <HeaderDescCheckInput id="check-1" />
-          <label htmlFor="check-1"></label>
+          <HeaderDescCheckInput id="check-2" />
+          <label htmlFor="check-2"></label>
           <HeaderDescLabel>
             <a>광고성 정보 수신</a>에 동의합니다
           </HeaderDescLabel>

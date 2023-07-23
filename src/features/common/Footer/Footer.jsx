@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { NewsAddButton } from "../Button/Button";
 import {
   NewsFooterBox,
   NewsFooterLink,
@@ -19,7 +18,6 @@ const NewsFooter = () => {
 
   return (
     <NewsFooterBox>
-      <NewsAddButton>더보기</NewsAddButton>
       <NewsFooterLinkBox>
         <NewsFooterLinkLogo
           onMouseEnter={onMouseEnter}

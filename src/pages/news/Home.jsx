@@ -6,6 +6,7 @@ import NewsHeaderDesc from "../../features/common/Header/HeaderDesc";
 import NewsHeaderCatagory from "../../features/common/Header/HeadeCatagory";
 import { NewsContainer, NewsList } from "../../features/news/newslist/NewsList";
 import NewsFooter from "../../features/common/Footer/Footer";
+import { NewsAddButton } from "../../features/common/Button/Button";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       {/* 컨테이너 영역 */}
       <NewsContainer>
         <NewsList />
+        <NewsAddButton>더보기</NewsAddButton>
       </NewsContainer>
       {/* 푸터 영역 */}
       <NewsFooter />

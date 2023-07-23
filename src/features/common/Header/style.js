@@ -70,7 +70,6 @@ export const HeaderDescBox = styled.div`
 
 export const HeaderDescInnerBox = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
   padding: 0 10rem;
   display: flex;
   flex-direction: column;
@@ -91,7 +90,6 @@ export const HeaderDescText = styled.span`
 
 export const HeaderDescForm = styled.form`
   max-width: 1200px;
-  margin: 0 auto;
   padding: 0 10rem;
 `;
 
@@ -156,22 +154,26 @@ export const HeaderDescImgBox = styled.div`
 
 export const HeaderCatagoryBox = styled.div`
   width: 100%;
+  margin: 0 auto;
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
   background: #fff;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  white-space: nowrap;
+  overflow: overlay;
 `;
 
 export const HeaderCatagoryList = styled.ul`
   display: flex;
+  gap: 10px;
+  align-items: center;
 `;
 
 export const HeaderCatagoryItem = styled.li`
   font-size: 1rem;
   font-weight: 500;
   padding: 20px 10px;
-  margin: 0 10px;
   &:hover {
     color: #ff6b00;
   }
