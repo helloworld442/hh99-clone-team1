@@ -19,6 +19,8 @@ export const NewsContainer = ({ children }) => {
   const [show, setShow] = useState(true);
   const [result, fetchData] = useFetch(getMainNews, page);
 
+  const onClickButton = () => setPage(page + 1);
+
   useEffect(() => {
     fetchData();
   }, [page]);
@@ -35,11 +37,9 @@ export const NewsContainer = ({ children }) => {
     }
   }, [result.success]);
 
-  const onClickButton = () => setPage(page + 1);
+  if (result.loading) return <Spinner />;
 
-  if (result.loading) {
-    return <Spinner />;
-  }
+  if (result.error) return <Spinner />;
 
   return (
     <NewsListContext.Provider value={{ data, show, onClickButton }}>
