@@ -27,5 +27,5 @@ export const useInfiniteData = (key, fetchFunction) => {
     fetchNextPage();
   };
 
-  return { results, isSuccess, isFetchingNextPage, loadMoreButtonOnClick, hasNextPage };
+  return { results, isSuccess, isFetchingNextPage, loadMoreButtonOnClick, hasNextPage,data };
 };

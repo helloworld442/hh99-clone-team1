@@ -10,6 +10,7 @@ import Login from "../pages/user/Login";
 import Register from "../pages/user/Register";
 import ForgotPwd from "../features/user/forgotpwd/ForgotPwd";
 import NewPwd from "../features/user/newpwd/NewPwd";
+import Reads from "../features/user/reads/Reads";
 
 const Router = () => {
   return (
@@ -24,7 +25,7 @@ const Router = () => {
         <Route path="/profile" element={<Profile/>} />
         <Route path="/setting" element={<Setting/>} />
         <Route path="/likes" element={<Likes/>} />
-        <Route path="/reads" element={<Likes/>} />
+        <Route path="/reads" element={<Reads/>} />
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Register />} />
       </Routes>
