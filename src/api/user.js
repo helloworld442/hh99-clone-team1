@@ -9,6 +9,10 @@ const userLogin = async (loginUser) => {
   return response.data;
 };
 
+const userLogOut = async () => {
+  await api.post(`/api/user/logout`);
+};
+
 const getForgotPwd = async (email) => {
   const response = await api.get(`/api/pwd/forgot/${email}`);
   return response.data;
@@ -50,6 +54,7 @@ const deleteUser = async (userEmail) => {
 export {
   userSignUp,
   userLogin,
+  userLogOut,
   getForgotPwd,
   getNewPwd,
   getAuthToken,
