@@ -5,8 +5,11 @@ import NewsHeaderTitle from "../../features/common/Header/HeaderTitle";
 import NewsHeaderDesc from "../../features/common/Header/HeaderDesc";
 import NewsHeaderCatagory from "../../features/common/Header/HeadeCatagory";
 import { NewsContainer, NewsList } from "../../features/news/newslist/NewsList";
-import NewsFooter from "../../features/common/Footer/Footer";
 import { NewsAddButton } from "../../features/common/Button/Button";
+import {
+  NewsFooter,
+  NewsMobileFooter,
+} from "../../features/common/Footer/Footer";
 
 const Home = () => {
   return (
@@ -25,6 +28,7 @@ const Home = () => {
       </NewsContainer>
       {/* 푸터 영역 */}
       <NewsFooter />
+      <NewsMobileFooter />
     </Layout>
   );
 };

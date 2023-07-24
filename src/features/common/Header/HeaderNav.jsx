@@ -12,6 +12,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { LOGOUT_USER } from "../../../redux/reducers/userSlice";
+import { useMutation } from "react-query";
+import { userLogOut } from "../../../api/user";
 
 const NewsHeaderNav = () => {
   return (
@@ -73,12 +75,14 @@ const NavContent = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isOpen, onToggleNav } = useContext(NavContext);
+  const mutation = useMutation(() => userLogOut());
 
-  const onClickMypage = () => navigate("#");
+  const onClickMypage = () => navigate("/profile");
 
-  const onClickProfile = () => navigate("#");
+  const onClickProfile = () => navigate("/setting");
 
   const onClickLogout = () => {
+    mutation.mutate();
     dispatch(LOGOUT_USER());
     window.location.reload();
   };

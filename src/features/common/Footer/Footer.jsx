@@ -4,6 +4,9 @@ import {
   NewsFooterLink,
   NewsFooterLinkBox,
   NewsFooterLinkLogo,
+  NewsMobileFooterList,
+  NewsMobiledFooterBox,
+  NewsMobiledFooterItem,
 } from "./style";
 import beforeImg from "../../../assets/footerimgbefore.png";
 import afterImg from "../../../assets/footerimgafter.png";
@@ -33,4 +36,30 @@ const NewsFooter = () => {
   );
 };
 
-export default NewsFooter;
+const NewsMobileFooter = () => {
+  const [active, setActive] = useState(1);
+
+  return (
+    <NewsMobiledFooterBox>
+      <NewsMobileFooterList>
+        <Link to="/" onClick={() => setActive(1)}>
+          <NewsMobiledFooterItem className={active === 1 ? "active" : null}>
+            🏠<span>홈</span>
+          </NewsMobiledFooterItem>
+        </Link>
+        <Link to="/search" onClick={() => setActive(2)}>
+          <NewsMobiledFooterItem className={active === 2 ? "active" : null}>
+            🔍<span>검색</span>
+          </NewsMobiledFooterItem>
+        </Link>
+        <Link to="#" onClick={() => setActive(3)}>
+          <NewsMobiledFooterItem className={active === 3 ? "active" : null}>
+            🦔<span>마이페이지</span>
+          </NewsMobiledFooterItem>
+        </Link>
+      </NewsMobileFooterList>
+    </NewsMobiledFooterBox>
+  );
+};
+
+export { NewsFooter, NewsMobileFooter };

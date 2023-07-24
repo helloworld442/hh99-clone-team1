@@ -9,6 +9,10 @@ const userLogin = async (loginUser) => {
   return response.data;
 };
 
+const userLogOut = async () => {
+  await api.post(`/api/user/logout`);
+};
+
 const getForgotPwd = async (email) => {
   const response = await api.get(`/api/pwd/forgot/${email}`);
   return response.data;
@@ -20,10 +24,22 @@ const getNewPwd = async (password) => {
   return response.data;
 };
 
+const getReadList = async (userEmail) => {
+  const response = await api.get(`/api/user/read/${userEmail}`);
+  return response.data;
+}
+
+const getLikeList = async (userEmail) => {
+  const response = await api.get(`/api/user/like/${userEmail}`);
+  return response.data;
+}
+
 const getAuthToken = async ()=> {
   const response = await api.get(`/api/user/token`);
   return response.data;
 };
+
+
 
 const updateUser = async (sendData) => {
   await api.patch(`/api/user/${sendData.email}/nickname`, {
@@ -38,9 +54,12 @@ const deleteUser = async (userEmail) => {
 export {
   userSignUp,
   userLogin,
+  userLogOut,
   getForgotPwd,
   getNewPwd,
   getAuthToken,
   updateUser,
   deleteUser,
+  getReadList,
+  getLikeList,
 };

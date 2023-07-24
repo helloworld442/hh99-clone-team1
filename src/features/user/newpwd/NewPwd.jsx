@@ -5,8 +5,9 @@ import {getNewPwd} from "../../../api/user";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {NavLogo} from "../../common/Header/HeaderNav";
 import Logo from "../../../assets/logo.png";
-import {PrimaryButton, StyledForm, StyledHeader, StyledSection, StyledTextField} from "../signin/style";
+import { StyledForm, StyledHeader, StyledSection, StyledTextField} from "../signin/style";
 import {StyledFieldset} from "../signup/style";
+import {AuthButton} from "../../common/Button/Button";
 
 const NewPwd = () => {
   const location = useLocation();
@@ -99,8 +100,8 @@ const NewPwd = () => {
               {error.passwordConfirm && <p style={{color: 'red'}}>{error.passwordConfirm}</p>}
             </StyledTextField>
           </StyledFieldset>
-          <PrimaryButton type="submit" style={{width: "100%", marginTop: "30px"}}
-          >비밀번호 변경하기</PrimaryButton>
+          <AuthButton type="submit" style={{width: "100%", marginTop: "30px"}}
+          >비밀번호 변경하기</AuthButton>
         </StyledForm>
       </StyledSection>
     </>
