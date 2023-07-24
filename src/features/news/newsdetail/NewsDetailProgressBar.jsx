@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import React from "react";
+import { useEffect, useState } from "react";
 import {
   NewsDetailProgressBarBox,
   NewsDetailProgressBarInner,
@@ -17,6 +17,7 @@ const NewsDetailProgressBar = () => {
       const percent = (st / (sh - h.clientHeight)) * 100;
 
       setScrollProgress(percent);
+      console.log(percent);
     };
 
     window.addEventListener("scroll", updateScrollProgress);

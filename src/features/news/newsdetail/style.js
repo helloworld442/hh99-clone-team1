@@ -14,7 +14,6 @@ export const NewsDetailProgressBarBox = styled.div`
   left: 0;
   z-index: 100;
 `;
-
 export const NewsDetailProgressBarInner = styled.div`
   width: 0%;
   height: 55px;
@@ -23,7 +22,6 @@ export const NewsDetailProgressBarInner = styled.div`
   overflow: hidden;
   transition: all 0.2s;
 `;
-
 export const NewsDetailProgressBarHeadLine = styled.h2`
   position: absolute;
   top: 50%;
@@ -56,14 +54,12 @@ export const NewsDetailTimeText = styled.span`
   font-size: 1.125rem;
   color: #051619;
 `;
-
 export const NewsDetailAsideBox = styled.div`
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
 `;
-
 export const NewsDetailAsideIcon = styled(ArrowRightOutlined)`
   max-width: 67px;
   flex-grow: 1;
@@ -71,12 +67,10 @@ export const NewsDetailAsideIcon = styled(ArrowRightOutlined)`
   margin-right: 3px;
   padding: 17px 0;
 `;
-
 export const NewsDetailAsideText = styled.span`
   text-indent: 100%;
   white-space: nowrap;
 `;
-
 export const NewsDetailHoverText = styled.span`
   position: absolute;
   white-space: nowrap;
@@ -88,7 +82,6 @@ export const NewsDetailHoverText = styled.span`
     margin-right: 50px;
   }
 `;
-
 export const NewsDetailAsideLink = styled(Link)`
   display: flex;
   align-items: center;
@@ -105,9 +98,9 @@ export const NewsDetailAsideLink = styled(Link)`
   }
   &:hover ${NewsDetailHoverText} {
     opacity: 1;
-    animation-timing-function: linear;
-    animation-duration: 5s;
     animation-name: textcycle;
+    animation-timing-function: linear;
+    animation-duration: 20s;
   }
 
   @-webkit-keyframes textcycle {
@@ -119,7 +112,6 @@ export const NewsDetailAsideLink = styled(Link)`
     }
   }
 `;
-
 export const NewsDetailFooterBox = styled.div`
   display: flex;
   flex-direction: column;

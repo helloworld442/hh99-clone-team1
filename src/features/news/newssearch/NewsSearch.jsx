@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   NewsSearchLayout,
   NewsSearchInputBox,
@@ -11,15 +11,33 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 
 const NewsSearch = () => {
+  const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
+
   return (
     <NewsSearchLayout>
       <NewsSearchInputBox>
         <NewsSearchIcon onClick={() => navigate("/")} />
-        <NewsSearchInput
-          type="text"
-          placeholder="고슴아 이게 궁금해. (인물,이슈)"
-        />
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            navigate(`/search/posts?keyword=${inputValue}`);
+          }}
+        >
+          <NewsSearchInput
+            type="text"
+            placeholder="고슴아 이게 궁금해. (인물,이슈)"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                // const postId =
+                navigate(`/search/posts?keyword=${inputValue}`);
+              }
+            }}
+          />
+        </form>
       </NewsSearchInputBox>
 
       <NewsKeywordBox>
