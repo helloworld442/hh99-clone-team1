@@ -1,3 +1,4 @@
+import { NewsMobileFooter } from "../../features/common/Footer/Footer";
 import NewsHeader from "../../features/common/Header/Header";
 import NewsHeaderNav from "../../features/common/Header/HeaderNav";
 import Layout from "../../features/common/Layout";
@@ -10,6 +11,7 @@ const Detail = () => {
         <NewsHeaderNav />
       </NewsHeader>
       <NewsDetail />
+      <NewsMobileFooter />
     </Layout>
   );
 };
