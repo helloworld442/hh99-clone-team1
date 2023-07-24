@@ -53,6 +53,12 @@ const StyledAddButton = styled.button`
   }
 `;
 
+/**
+ * @param {Function} onClick the function to call when the button is clicked
+ * @param {boolean} isLoading whether the button is loading
+ * @param {boolean} isHas whether the data is haved
+ */
+
 export const NewsAddButton = ({ onClick, isLoading, isHas }) => {
   if (isLoading) {
     return <Spinner />;
