@@ -37,9 +37,9 @@ export const NewsContainer = ({ children }) => {
     }
   }, [result.success]);
 
-  if (result.loading) return <Spinner />;
+  // if (result.loading) return <Spinner />;
 
-  if (result.error) return <Spinner />;
+  // if (result.error) return <Spinner />;
 
   return (
     <NewsListContext.Provider value={{ data, show, onClickButton }}>
