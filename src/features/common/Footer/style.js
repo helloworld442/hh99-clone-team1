@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 
 export const NewsFooterBox = styled.div`
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
   text-align: center;
 `;
 
 export const NewsFooterLinkBox = styled.div`
-  margin: 15rem 0;
+  margin: 15rem 0 0 0;
   border-top: 2px solid #333;
   border-bottom: 2px solid #333;
 `;

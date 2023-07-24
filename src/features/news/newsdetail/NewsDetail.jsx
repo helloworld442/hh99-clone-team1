@@ -2,22 +2,23 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Layout } from "./style";
 import {
-  StNewsDetaiTitleBox,
-  StNewsDetailCategoryLink,
-  StNewsDetailTimeText,
-  StNewsDetailTitle,
-  AsideBox,
-  AsideLink,
-  AsideText,
-  HoverText,
-  AsideIcon,
-  StFooterBox,
-  StFooterLogo,
-  StMemberInfo,
-  StMemberLink,
+  NewsDetaiTitleBox,
+  NewsDetailCategoryLink,
+  NewsDetailTimeText,
+  NewsDetailTitle,
+  NewsDetailAsideBox,
+  NewsDetailAsideLink,
+  NewsDetailAsideText,
+  NewsDetailHoverText,
+  NewsDetailAsideIcon,
+  NewsDetailFooterBox,
+  NewsDetailFooterLogo,
+  NewsDetailMemberInfo,
+  NewsDetailMemberLink,
 } from "./style";
 import Header from "../../common/Header/Header";
 import HeaderNav from "../../common/Header/HeaderNav";
+import NewsFooter from "../../common/Footer/Footer";
 import logo from "../../../assets/logo.png";
 
 const NewsDetail = () => {
@@ -37,44 +38,45 @@ const NewsDetail = () => {
     <Layout>
       <Header />
       <HeaderNav />
-      <StNewsDetaiTitleBox>
-        <StNewsDetailCategoryLink to={navigate("/")}>
-          정치
-        </StNewsDetailCategoryLink>
-        <StNewsDetailTitle>
+
+      <NewsDetaiTitleBox>
+        <NewsDetailCategoryLink to={navigate("/")}>정치</NewsDetailCategoryLink>
+        <NewsDetailTitle>
           🔔띵동! ‘킬러 문항 배제’ 피자가 도착했습니다!
-        </StNewsDetailTitle>
-        <StNewsDetailTimeText>2023/07/22</StNewsDetailTimeText>
-      </StNewsDetaiTitleBox>
+        </NewsDetailTitle>
+        <NewsDetailTimeText>2023/07/22</NewsDetailTimeText>
+      </NewsDetaiTitleBox>
 
-      <AsideBox>
-        <AsideLink to={navigate("/")}>
-          <AsideText>안녕하세요</AsideText>
-          <AsideIcon />
-          <HoverText>뉴스레터 구독하기</HoverText>
-        </AsideLink>
-      </AsideBox>
+      <NewsFooter />
 
-      <StFooterBox>
+      <NewsDetailAsideBox>
+        <NewsDetailAsideLink to={navigate("/")}>
+          <NewsDetailAsideText>안녕하세요</NewsDetailAsideText>
+          <NewsDetailAsideIcon />
+          <NewsDetailHoverText>뉴스레터 구독하기</NewsDetailHoverText>
+        </NewsDetailAsideLink>
+      </NewsDetailAsideBox>
+
+      <NewsDetailFooterBox>
         <Link to={navigate("/")}>
-          <StFooterLogo src={logo} alt="newneek logo" />
+          <NewsDetailFooterLogo src={logo} alt="newneek logo" />
         </Link>
-        <StMemberInfo>
+        <NewsDetailMemberInfo>
           {memberData
             .sort((a, b) => a.member.localeCompare(b.member))
             .map((item) => {
               return (
-                <StMemberLink key={item.id} to={navigate("/")}>
+                <NewsDetailMemberLink key={item.id} to={navigate("/")}>
                   {item.member}
-                </StMemberLink>
+                </NewsDetailMemberLink>
               );
             })}
-        </StMemberInfo>
-      </StFooterBox>
+        </NewsDetailMemberInfo>
+      </NewsDetailFooterBox>
     </Layout>
   );
 };
-AsideBox.defaultProps = {
+NewsDetailAsideBox.defaultProps = {
   onMouseEnter: (e) => {
     const currentTarget = e.currentTarget;
     const asideText = currentTarget.querySelector("span");
@@ -84,7 +86,6 @@ AsideBox.defaultProps = {
     asideText.style.opacity = "0";
     icon.style.opacity = "0";
     hoverText.style.display = "block";
-    hoverText.style.animation = "hover 8s linear infinite";
   },
   onMouseLeave: (e) => {
     const currentTarget = e.currentTarget;
