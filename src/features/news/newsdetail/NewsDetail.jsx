@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Layout } from "./style";
 import {
   StNewsDetaiTitleBox,
   StNewsDetailCategoryLink,
@@ -16,8 +15,6 @@ import {
   StMemberInfo,
   StMemberLink,
 } from "./style";
-import Header from "../../common/Header/Header";
-import HeaderNav from "../../common/Header/HeaderNav";
 import logo from "../../../assets/logo.png";
 
 const NewsDetail = () => {
@@ -34,9 +31,7 @@ const NewsDetail = () => {
   ]);
 
   return (
-    <Layout>
-      <Header />
-      <HeaderNav />
+    <>
       <StNewsDetaiTitleBox>
         <StNewsDetailCategoryLink to={navigate("/")}>
           정치
@@ -71,7 +66,7 @@ const NewsDetail = () => {
             })}
         </StMemberInfo>
       </StFooterBox>
-    </Layout>
+    </>
   );
 };
 AsideBox.defaultProps = {
