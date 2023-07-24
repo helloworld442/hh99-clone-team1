@@ -29,7 +29,7 @@ const NewsSearch = () => {
             placeholder="고슴아 이게 궁금해. (인물,이슈)"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            onKeyPress={(e) => {
+            onKeyDown={(e) => {
               if (e.key === "Enter") {
                 e.preventDefault();
                 // const postId =

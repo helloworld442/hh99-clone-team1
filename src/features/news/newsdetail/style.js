@@ -57,25 +57,41 @@ export const NewsDetailTimeText = styled.span`
 export const NewsDetailAsideBox = styled.div`
   position: relative;
   overflow: hidden;
-  white-space: nowrap;
+  height: 72px;
   width: 100%;
+  @media screen and (max-width: 1079px) {
+    height: 79px;
+  }
 `;
 export const NewsDetailAsideIcon = styled(ArrowRightOutlined)`
-  max-width: 67px;
-  flex-grow: 1;
-  margin-left: 11px;
-  margin-right: 3px;
-  padding: 17px 0;
+  max-width: 40px;
+  margin-top: -50px;
 `;
 export const NewsDetailAsideText = styled.span`
-  text-indent: 100%;
+  font-size: 1.25rem;
+  line-height: 1.6;
   white-space: nowrap;
+  margin-bottom: 50px;
+  text {
+    font-weight: 700;
+  }
+  @media screen and (max-width: 1079px) {
+    font-size: 16px;
+    span {
+      line-height: 1.6;
+      display: block;
+    }
+  }
 `;
 export const NewsDetailHoverText = styled.span`
   position: absolute;
   white-space: nowrap;
   left: 0;
   opacity: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 50px;
   animation-iteration-count: infinite;
   span {
     margin-left: 50px;
@@ -85,24 +101,20 @@ export const NewsDetailHoverText = styled.span`
 export const NewsDetailAsideLink = styled(Link)`
   display: flex;
   align-items: center;
+  align-content: center;
   justify-content: space-between;
   padding: 1.25rem 5%;
+  box-sizing: border-box;
   background: #eae7de;
-  text-align: left;
   font-size: 1.5rem;
   color: #051619;
-  position: relative;
-
   &:hover ${NewsDetailAsideText}, &:hover ${NewsDetailAsideIcon} {
     opacity: 0;
   }
   &:hover ${NewsDetailHoverText} {
     opacity: 1;
-    animation-name: textcycle;
-    animation-timing-function: linear;
-    animation-duration: 20s;
+    animation: textcycle 20s linear;
   }
-
   @-webkit-keyframes textcycle {
     from {
       left: -100%;

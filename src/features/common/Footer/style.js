@@ -4,7 +4,7 @@ export const NewsFooterBox = styled.div`
   padding: 2rem 0 0 0;
   text-align: center;
   @media screen and (max-width: 1079px) {
-    padding: 2rem 0;
+    padding: 2rem 0 0 0;
   }
 `;
 
@@ -13,7 +13,7 @@ export const NewsFooterLinkBox = styled.div`
   border-top: 2px solid #333;
   border-bottom: 2px solid #333;
   @media screen and (max-width: 1079px) {
-    margin: 15rem 0;
+    margin: 15rem 0 0 0;
   }
 `;
 

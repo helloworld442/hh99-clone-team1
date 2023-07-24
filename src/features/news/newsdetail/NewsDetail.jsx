@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   NewsDetaiTitleBox,
@@ -91,7 +91,12 @@ const NewsDetail = () => {
 
       <NewsDetailAsideBox>
         <NewsDetailAsideLink to="/">
-          <NewsDetailAsideText>안녕하세요</NewsDetailAsideText>
+          <NewsDetailAsideText>
+            오늘까지 <text>588회</text> 뉴스레터를 발행했고&nbsp;
+            <span>
+              <text>557,632명</text>이 구독했어요!
+            </span>
+          </NewsDetailAsideText>
           <NewsDetailAsideIcon />
           <NewsDetailHoverText>
             {textArr.map((item, idx) => (
