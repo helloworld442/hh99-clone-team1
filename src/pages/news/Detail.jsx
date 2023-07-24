@@ -3,7 +3,6 @@ import NewsHeader from "../../features/common/Header/Header";
 import NewsHeaderNav from "../../features/common/Header/HeaderNav";
 import Layout from "../../features/common/Layout";
 import NewsDetail from "../../features/news/newsdetail/NewsDetail";
-import { NewsContainer } from "../../features/news/newslist/NewsList";
 import NewsDetailProgressBar from "../../features/news/newsdetail/NewsDetailProgressBar";
 
 const Detail = () => {
@@ -15,9 +14,7 @@ const Detail = () => {
         <NewsHeaderNav />
       </NewsHeader>
       {/* 컨테이너 영역 */}
-      <NewsContainer>
-        <NewsDetail />
-      </NewsContainer>
+      <NewsDetail />
       {/* 푸터 영역 */}
       <NewsMobileFooter />
     </Layout>

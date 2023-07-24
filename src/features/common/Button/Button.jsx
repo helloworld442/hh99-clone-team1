@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { styled } from "styled-components";
-import { NewsListContext } from "../../news/newslist/NewsList";
 import Spinner from "../Spinner/Spinner";
 
 const StyledAuthButton = styled.button`
@@ -55,20 +53,14 @@ const StyledAddButton = styled.button`
   }
 `;
 
-export const NewsAddButton = () => {
-  const { hasNextPage, loadMoreButtonOnClick, isFetchingNextPage } =
-    useContext(NewsListContext);
-
-  if (isFetchingNextPage) {
+export const NewsAddButton = ({ onClick, isLoading, isHas }) => {
+  if (isLoading) {
     return <Spinner />;
   }
-
-  if (hasNextPage) {
+  if (isHas) {
     return (
       <StyledAddButtonBox>
-        <StyledAddButton onClick={loadMoreButtonOnClick}>
-          더보기
-        </StyledAddButton>
+        <StyledAddButton onClick={onClick}>더보기</StyledAddButton>
       </StyledAddButtonBox>
     );
   }

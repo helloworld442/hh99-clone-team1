@@ -29,8 +29,10 @@ export const StNewsList = styled.ul`
 export const StNewsInfoBox = styled.div`
   width: 100%;
   height: 200px;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 30px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #000;
   display: flex;
   flex-direction: column;
   justify-content: center;

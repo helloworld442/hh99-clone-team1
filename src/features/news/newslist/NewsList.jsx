@@ -1,4 +1,3 @@
-import { createContext, useContext } from "react";
 import Card from "../../common/Card/Card";
 import {
   NewsInfoButton,
@@ -9,17 +8,7 @@ import {
 } from "./style";
 import { getMainNews } from "../../../api/news";
 import { useInfiniteData } from "../../../hooks/useInfiniteData";
-
-export const NewsListContext = createContext();
-
-export const NewsContainer = ({ children }) => {
-  const response = useInfiniteData("infinite-main", getMainNews);
-  return (
-    <NewsListContext.Provider value={response}>
-      {children}
-    </NewsListContext.Provider>
-  );
-};
+import { NewsAddButton } from "../../common/Button/Button";
 
 export const NewsInfoBox = () => {
   return (
@@ -34,7 +23,8 @@ export const NewsInfoBox = () => {
 };
 
 export const NewsList = () => {
-  const { results } = useContext(NewsListContext);
+  const { results, hasNextPage, loadMoreButtonOnClick, isFetchingNextPage } =
+    useInfiniteData("infinite-main", getMainNews);
   return (
     <NewsListBox>
       <StNewsList>
@@ -48,6 +38,13 @@ export const NewsList = () => {
           />
         ))}
       </StNewsList>
+      <NewsAddButton
+        onClick={loadMoreButtonOnClick}
+        loading={isFetchingNextPage}
+        isHas={hasNextPage}
+      >
+        더보기
+      </NewsAddButton>
     </NewsListBox>
   );
 };
