@@ -9,9 +9,8 @@ import { useSearchParams } from "react-router-dom";
 const NewsPost = () => {
   const [searchParams] = useSearchParams();
   const keyword = searchParams.get("keyword");
-
   let results = [];
-  const { isSuccess, data, isFetchingNexPage, fethcNextPage, hasNextPage } =
+  const { data, isSuccess, isFetchingNextPage, fetchNextPage, hasNextPage } =
     useInfiniteQuery(
       "infinite-post",
       ({ pageParam = 1 }) => getSearchResults(keyword, pageParam),
@@ -23,10 +22,8 @@ const NewsPost = () => {
       }
     );
 
-  console.log(isSuccess, data, isFetchingNexPage, fethcNextPage, hasNextPage);
-
   const onClickNextPage = () => {
-    fethcNextPage();
+    fetchNextPage();
   };
 
   if (isSuccess) {
@@ -35,7 +32,10 @@ const NewsPost = () => {
 
   return (
     <>
-      <NewsInfoBox title={keyword} length={results.length} />
+      <NewsInfoBox
+        title={keyword}
+        length={data && data.pages[0].totalElements}
+      />
       <NewsListBox>
         <StNewsList>
           {results.map((item) => (
@@ -50,7 +50,7 @@ const NewsPost = () => {
         </StNewsList>
         <NewsAddButton
           onClick={onClickNextPage}
-          isLoading={isFetchingNexPage}
+          isLoading={isFetchingNextPage}
           isHas={hasNextPage}
         />
       </NewsListBox>
