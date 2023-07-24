@@ -8,8 +8,10 @@ import {
 } from "./style";
 import navLogo from "../../../assets/logo.png";
 import { UserOutlined, SearchOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
+import { useDispatch } from "react-redux";
+import { LOGOUT_USER } from "../../../redux/reducers/userSlice";
 
 const NewsHeaderNav = () => {
   return (
@@ -68,14 +70,32 @@ const NavButton = () => {
 };
 
 const NavContent = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isOpen, onToggleNav } = useContext(NavContext);
+
+  const onClickMypage = () => navigate("#");
+
+  const onClickProfile = () => navigate("#");
+
+  const onClickLogout = () => {
+    dispatch(LOGOUT_USER());
+    window.location.reload();
+  };
+
   return isOpen ? (
     <>
       <HeaderNavBackground onClick={onToggleNav} />
       <HeaderNavContentList>
-        <HeaderNavContentItem>마이페이지</HeaderNavContentItem>
-        <HeaderNavContentItem>프로필 설정</HeaderNavContentItem>
-        <HeaderNavContentItem>로그아웃</HeaderNavContentItem>
+        <HeaderNavContentItem>
+          <button onClick={onClickMypage}>마이페이지</button>
+        </HeaderNavContentItem>
+        <HeaderNavContentItem>
+          <button onClick={onClickProfile}>프로필 설정</button>
+        </HeaderNavContentItem>
+        <HeaderNavContentItem>
+          <button onClick={onClickLogout}>로그아웃</button>
+        </HeaderNavContentItem>
       </HeaderNavContentList>
     </>
   ) : null;
