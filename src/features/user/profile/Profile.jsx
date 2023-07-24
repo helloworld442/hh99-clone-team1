@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from "../../common/Header/Header";
 import HeaderNav from "../../common/Header/HeaderNav";
 import Layout from "../../common/Layout";
 import {GlobalStyle} from "../newpwd/style";
 import {History, HistoryChange, HistoryHead, HistoryHeadActions, HistoryStatics, HistoryUsername} from "./style";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useQuery} from "react-query";
-import {getLikeList, getReadList} from "../../../api/user";
+import {getAuthToken, getLikeList, getReadList} from "../../../api/user";
+import {AUTH_USER} from "../../../redux/reducers/userSlice";
 
 const Profile = () => {
+  const dispatch = useDispatch();
   const {user} = useSelector((state) => state.user);
   const {data: likeData, isSuccess: likeSucs} = useQuery(
     ["like", user.email],
@@ -16,6 +18,12 @@ const Profile = () => {
   const {data: readData, isSuccess: readSucs} = useQuery(
     ["read", user.email],
     () => getReadList(user.email));
+  useQuery(["authuser"], () => getAuthToken(),{
+    onSuccess: (data) => {
+      dispatch({type: AUTH_USER, payload: data});
+    }
+  });
+
   return (
     <Layout>
       <Header>

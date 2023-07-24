@@ -5,11 +5,11 @@ import NewsHeaderNav from "../../common/Header/HeaderNav";
 import NewsHeaderTitle from "../../common/Header/HeaderTitle";
 import NewsHeaderDesc from "../../common/Header/HeaderDesc";
 import {NewsItem} from "../../news/newslist/NewsList";
-import NewsFooter from "../../common/Footer/Footer";
 import {NewsListBox, StNewsList} from "../../news/newslist/style";
 import {StyledAddButton, StyledAddButtonBox, StyledHeader} from "./style";
 import {getReads} from "../../../api/news";
 import {useInfiniteData} from "../../../hooks/useInfiniteData";
+import {NewsFooter} from "../../common/Footer/Footer";
 
 const Reads = () => {
   const { results, isSuccess, isFetchingNextPage, loadMoreButtonOnClick, hasNextPage,data } = useInfiniteData('reads', getReads);
