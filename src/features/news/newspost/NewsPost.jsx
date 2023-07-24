@@ -4,13 +4,16 @@ import { NewsItem } from "../newslist/NewsList";
 import { NewsListBox, StNewsList } from "../newslist/style";
 import { getSearchResults } from "../../../api/news";
 import { NewsInfoButton, NewsInfoText, StNewsInfoBox } from "./style";
+import { useSearchParams } from "react-router-dom";
 
 const NewsPost = () => {
   let results = [];
+  const [searchParams, setSearchParams] = useSearchParams();
+  const keyword = searchParams.get("keyword");
   const { isSuccess, data, isFetchingNexPage, fethcNextPage, hasNextPage } =
     useInfiniteQuery(
       "infinite-post",
-      ({ pageParam = 1 }) => getSearchResults("안녕", pageParam),
+      ({ pageParam = 1 }) => getSearchResults(keyword, pageParam),
       {
         getNextPageParam: (lastPage, allPages) => {
           const morePagesExist = allPages.length < lastPage.totalPages;
@@ -29,7 +32,7 @@ const NewsPost = () => {
 
   return (
     <>
-      <NewsInfoBox title="안녕" length={results.length} />
+      <NewsInfoBox title={keyword} length={results.length} />
       <NewsListBox>
         <StNewsList>
           {results.map((item) => (
