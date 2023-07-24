@@ -1,0 +1,16 @@
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import user from "../reducers/userSlice";
+import news from "../reducers/newsSlice";
+
+const rootReducer = combineReducers({
+  user,news
+});
+
+// 2. create store
+const store = configureStore({
+  reducer: rootReducer,
+  devTools: process.env.NODE_ENV !== 'production',
+});
+
+// 3. export
+export default store;
