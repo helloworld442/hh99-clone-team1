@@ -7,9 +7,10 @@ import { NewsInfoButton, NewsInfoText, StNewsInfoBox } from "./style";
 import { useSearchParams } from "react-router-dom";
 
 const NewsPost = () => {
-  let results = [];
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const keyword = searchParams.get("keyword");
+
+  let results = [];
   const { isSuccess, data, isFetchingNexPage, fethcNextPage, hasNextPage } =
     useInfiniteQuery(
       "infinite-post",
@@ -21,6 +22,8 @@ const NewsPost = () => {
         },
       }
     );
+
+  console.log(isSuccess, data, isFetchingNexPage, fethcNextPage, hasNextPage);
 
   const onClickNextPage = () => {
     fethcNextPage();
