@@ -35,6 +35,8 @@ const getAuthToken = async ()=> {
   return response.data;
 };
 
+
+
 const updateUser = async (sendData) => {
   await api.patch(`/api/user/${sendData.email}/nickname`, {
     nickname: sendData.nickname,

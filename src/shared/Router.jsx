@@ -8,6 +8,7 @@ import ForgotPwd from "../features/user/forgotpwd/ForgotPwd";
 import NewPwd from "../features/user/newpwd/NewPwd";
 import Post from "../pages/news/Post";
 import Profile from "../features/user/profile/Profile";
+import Setting from "../features/user/setting/Setting";
 
 const Router = () => {
   return (
@@ -22,6 +23,7 @@ const Router = () => {
         <Route path="/forgot" element={<ForgotPwd />} />
         <Route path="/newPassword" element={<NewPwd/>} />
         <Route path="/profile" element={<Profile/>} />
+        <Route path="/setting" element={<Setting/>} />
       </Routes>
     </BrowserRouter>
   );

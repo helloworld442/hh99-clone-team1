@@ -1861,6 +1861,11 @@ electron-to-chromium@^1.4.431:
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.466.tgz"
   integrity sha512-TSkRvbXRXD8BwhcGlZXDsbI2lRoP8dvqR7LQnqQNk9KxXBc4tG8O+rTuXgTyIpEdiqSGKEBSqrxdqEntnjNncA==
 
+emoji-regex@^10.2.1:
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-10.2.1.tgz#a41c330d957191efd3d9dfe6e1e8e1e9ab048b3f"
+  integrity sha512-97g6QgOk8zlDRdgq1WxwgTMgEWGVAQvB5Fdpgc1MkNy56la5SKP9GsMXKDOdqwn90/41a8yPwIGk1Y6WVbeMQA==
+
 es-abstract@^1.19.0, es-abstract@^1.20.4:
   version "1.22.1"
   resolved "https://registry.npmjs.org/es-abstract/-/es-abstract-1.22.1.tgz"
