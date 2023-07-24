@@ -11,8 +11,8 @@ const Detail = () => {
     <Layout>
       {/* 허데영엉 */}
       <NewsHeader>
-        <NewsHeaderNav />
         <NewsDetailProgressBar />
+        <NewsHeaderNav />
       </NewsHeader>
       {/* 컨테이너 영역 */}
       <NewsContainer>

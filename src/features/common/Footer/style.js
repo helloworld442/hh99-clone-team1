@@ -50,7 +50,7 @@ export const NewsMobiledFooterBox = styled.div`
   left: 0;
   width: 100%;
   height: 60px;
-  padding: 0 8rem;
+  padding: 0 15%;
   border-top: 2px solid #000;
   box-sizing: border-box;
   background: #fff;

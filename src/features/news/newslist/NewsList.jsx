@@ -8,7 +8,6 @@ import {
   StNewsList,
 } from "./style";
 import { getMainNews } from "../../../api/news";
-import { Link } from "react-router-dom";
 import { useInfiniteData } from "../../../hooks/useInfiniteData";
 
 export const NewsListContext = createContext();
@@ -55,8 +54,8 @@ export const NewsList = () => {
 
 export const NewsItem = ({ id, title, src, date }) => {
   return (
-    <Link to={"/post/" + id}>
+    <a href={"/post/" + id}>
       <Card title={title} src={src} date={date} />
-    </Link>
+    </a>
   );
 };

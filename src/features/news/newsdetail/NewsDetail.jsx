@@ -16,7 +16,7 @@ import {
   NewsDetailMemberLink,
 } from "./style";
 import logo from "../../../assets/logo.png";
-import NewsFooter from "../../common/Footer/Footer";
+import { NewsFooter } from "../../common/Footer/Footer";
 
 const textArr = [
   "뉴스레터 구독하기",
