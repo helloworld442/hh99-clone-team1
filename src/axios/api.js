@@ -31,7 +31,6 @@ instance.interceptors.response.use(
       error.response &&
       error.response.status === 400 &&
       error.response.data.error === "auth_003" &&
-      error.response.data.message === "Unable to issue access tokens" &&
       !originalRequest._retry
     ) {
       console.log("액세스토큰이 유효하지 않습니다.");
