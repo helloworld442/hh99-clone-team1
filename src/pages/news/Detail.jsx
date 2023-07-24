@@ -3,14 +3,20 @@ import NewsHeader from "../../features/common/Header/Header";
 import NewsHeaderNav from "../../features/common/Header/HeaderNav";
 import Layout from "../../features/common/Layout";
 import NewsDetail from "../../features/news/newsdetail/NewsDetail";
+import { NewsContainer } from "../../features/news/newslist/NewsList";
 
 const Detail = () => {
   return (
     <Layout>
+      {/* 허데영엉 */}
       <NewsHeader>
         <NewsHeaderNav />
       </NewsHeader>
-      <NewsDetail />
+      {/* 컨테이너 영역 */}
+      <NewsContainer>
+        <NewsDetail />
+      </NewsContainer>
+      {/* 푸터 영역 */}
       <NewsMobileFooter />
     </Layout>
   );
