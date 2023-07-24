@@ -9,6 +9,7 @@ import NewPwd from "../features/user/newpwd/NewPwd";
 import Post from "../pages/news/Post";
 import Profile from "../features/user/profile/Profile";
 import Setting from "../features/user/setting/Setting";
+import Likes from "../features/user/likes/Likes";
 
 const Router = () => {
   return (
@@ -24,6 +25,7 @@ const Router = () => {
         <Route path="/newPassword" element={<NewPwd/>} />
         <Route path="/profile" element={<Profile/>} />
         <Route path="/setting" element={<Setting/>} />
+        <Route path="/likes" element={<Likes/>} />
       </Routes>
     </BrowserRouter>
   );
