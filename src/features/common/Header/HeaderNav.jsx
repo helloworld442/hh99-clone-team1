@@ -74,9 +74,9 @@ const NavContent = () => {
   const navigate = useNavigate();
   const { isOpen, onToggleNav } = useContext(NavContext);
 
-  const onClickMypage = () => navigate("#");
+  const onClickMypage = () => navigate("/profile");
 
-  const onClickProfile = () => navigate("#");
+  const onClickProfile = () => navigate("/setting");
 
   const onClickLogout = () => {
     dispatch(LOGOUT_USER());
