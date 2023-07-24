@@ -4,6 +4,7 @@ import NewsHeaderNav from "../../features/common/Header/HeaderNav";
 import Layout from "../../features/common/Layout";
 import NewsDetail from "../../features/news/newsdetail/NewsDetail";
 import { NewsContainer } from "../../features/news/newslist/NewsList";
+import NewsDetailProgressBar from "../../features/news/newsdetail/NewsDetailProgressBar";
 
 const Detail = () => {
   return (
@@ -11,6 +12,7 @@ const Detail = () => {
       {/* 허데영엉 */}
       <NewsHeader>
         <NewsHeaderNav />
+        <NewsDetailProgressBar />
       </NewsHeader>
       {/* 컨테이너 영역 */}
       <NewsContainer>
