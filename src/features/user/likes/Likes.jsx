@@ -12,13 +12,7 @@ import { getLikes } from "../../../api/news";
 import { useInfiniteData } from "../../../hooks/useInfiniteData";
 
 const Likes = () => {
-  const {
-    results,
-    isSuccess,
-    isFetchingNextPage,
-    loadMoreButtonOnClick,
-    hasNextPage,
-  } = useInfiniteData("likes", getLikes);
+  const { results, isSuccess, isFetchingNextPage, loadMoreButtonOnClick, hasNextPage,data } = useInfiniteData('likes', getLikes);
   return (
     <Layout>
       <NewsHeader>
@@ -29,11 +23,9 @@ const Likes = () => {
       <div>
         <NewsListBox>
           <StyledHeader className="posts-head">
-            <h1>
-              📙 읽었슴
-              <span className="status">
-                {isSuccess && results.length}개 읽었슴!
-              </span>
+            <h1>🧡 좋았슴
+              <span className="status">{isSuccess && data.pages[0].totalElements}개 좋았슴!</span>
+          
             </h1>
           </StyledHeader>
           <StNewsList>
