@@ -12,8 +12,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { LOGOUT_USER } from "../../../redux/reducers/userSlice";
-import {useMutation} from "react-query";
-import {userLogOut} from "../../../api/user";
+import { useMutation } from "react-query";
+import { userLogOut } from "../../../api/user";
 
 const NewsHeaderNav = () => {
   return (
