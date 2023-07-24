@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/news/Home";
-import SignIn from "../pages/user/SignIn";
-import SignUp from "../pages/user/SignUp";
 import Detail from "../pages/news/Detail";
 import Search from "../pages/news/Search";
+import Post from "../pages/news/Post";
+import Login from "../pages/user/Login";
+import Register from "../pages/user/Register";
 
 const Router = () => {
   return (
@@ -11,10 +12,10 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<Detail />} />
-        <Route path="/posts/:postId" element={<Home />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/search/posts/:postId" element={<Post />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="/signup" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );

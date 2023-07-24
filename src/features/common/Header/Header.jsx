@@ -1,7 +1,7 @@
 import { HeaderCol } from "./style";
 
-const Header = ({ children }) => {
+const NewsHeader = ({ children }) => {
   return <HeaderCol>{children}</HeaderCol>;
 };
 
-export default Header;
+export default NewsHeader;

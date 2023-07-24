@@ -5,26 +5,26 @@ import {
   HeaderCatagoryList,
 } from "./style";
 
-const arr = [
+const catagoryList = [
   { title: "전체", src: "/" },
-  { title: "사회", src: "/" },
-  { title: "인권", src: "/" },
-  { title: "라이프", src: "/" },
-  { title: "건강", src: "/" },
-  { title: "경제", src: "/" },
-  { title: "세계", src: "/" },
-  { title: "문화", src: "/" },
-  { title: "환경", src: "/" },
-  { title: "테크", src: "/" },
-  { title: "노동", src: "/" },
+  { title: "⚖️정치", src: "/" },
+  { title: "💰경제", src: "/" },
+  { title: "🌐세계", src: "/" },
+  { title: "🤖테크", src: "/" },
+  { title: "💪노동", src: "/" },
+  { title: "🌱환경", src: "/" },
+  { title: "🤝인권", src: "/" },
+  { title: "👥사회", src: "/" },
+  { title: "🎞문화", src: "/" },
+  { title: "🧘라이프", src: "/" },
 ];
 
-const HeaderCatagory = () => {
+const NewsHeaderCatagory = () => {
   return (
     <HeaderCatagoryBox>
       <HeaderCatagoryList>
-        {arr.map((item) => (
-          <HeaderCatagoryItem>
+        {catagoryList.map((item, idx) => (
+          <HeaderCatagoryItem key={idx}>
             <Link to={"/posts" + item.src}>{item.title}</Link>
           </HeaderCatagoryItem>
         ))}
@@ -33,4 +33,4 @@ const HeaderCatagory = () => {
   );
 };
 
-export default HeaderCatagory;
+export default NewsHeaderCatagory;
