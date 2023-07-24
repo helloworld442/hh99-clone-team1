@@ -1,13 +1,35 @@
 import { Link } from "react-router-dom";
-import { styled, keyframes } from "styled-components";
+import styled from "styled-components";
 import { ArrowRightOutlined } from "@ant-design/icons";
 
-export const Layout = styled.div`
+export const NewsDetailProgressBarBox = styled.div`
   width: 100%;
-  background-color: #eae7de;
-  @media (max-width: 1079px) {
-    font-size: 12px;
-  }
+  height: 55px;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+`;
+
+export const NewsDetailProgressBarInner = styled.div`
+  width: 0%;
+  height: 55px;
+  background: #ff6b00;
+  color: #000;
+  overflow: hidden;
+  transition: all 0.2s;
+`;
+
+export const NewsDetailProgressBarHeadLine = styled.h2`
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-110%);
+  text-align: center;
 `;
 export const NewsDetaiTitleBox = styled.div`
   padding: 4rem 5% 5rem;
@@ -41,6 +63,32 @@ export const NewsDetailAsideBox = styled.div`
   white-space: nowrap;
   width: 100%;
 `;
+
+export const NewsDetailAsideIcon = styled(ArrowRightOutlined)`
+  max-width: 67px;
+  flex-grow: 1;
+  margin-left: 11px;
+  margin-right: 3px;
+  padding: 17px 0;
+`;
+
+export const NewsDetailAsideText = styled.span`
+  text-indent: 100%;
+  white-space: nowrap;
+`;
+
+export const NewsDetailHoverText = styled.span`
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  opacity: 0;
+  animation-iteration-count: infinite;
+  span {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+`;
+
 export const NewsDetailAsideLink = styled(Link)`
   display: flex;
   align-items: center;
@@ -51,30 +99,23 @@ export const NewsDetailAsideLink = styled(Link)`
   font-size: 1.5rem;
   color: #051619;
   position: relative;
-`;
-export const NewsDetailAsideIcon = styled(ArrowRightOutlined)`
-  max-width: 67px;
-  flex-grow: 1;
-  margin-left: 11px;
-  margin-right: 3px;
-  padding: 17px 0;
-`;
-export const NewsDetailAsideText = styled.span`
-  text-indent: 100%;
-  white-space: nowrap;
-`;
-export const NewsDetailHoverText = styled.div`
-  position: absolute;
-  white-space: nowrap;
-  left: 0;
-  display: none;
-  animation: textcycle 2s linear infinite;
-  @keyframes textcycle {
-    0% {
-      transform: translateX(100%);
+
+  &:hover ${NewsDetailAsideText}, &:hover ${NewsDetailAsideIcon} {
+    opacity: 0;
+  }
+  &:hover ${NewsDetailHoverText} {
+    opacity: 1;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-name: textcycle;
+  }
+
+  @-webkit-keyframes textcycle {
+    from {
+      left: -100%;
     }
-    100% {
-      transform: translateX(-100%);
+    to {
+      left: -50%;
     }
   }
 `;

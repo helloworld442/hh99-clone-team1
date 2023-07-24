@@ -1,16 +1,15 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  hasMoreNews:true,
-}
+  hasMoreNews: true,
+};
 
 const newsSlice = createSlice({
-  name: 'news',
+  name: "news",
   initialState,
-  reducers: {
-  },
-})
+  reducers: {},
+});
 
-export const {} = newsSlice.actions
+export const {} = newsSlice.actions;
 
-export default newsSlice.reducer
+export default newsSlice.reducer;

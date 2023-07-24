@@ -7,9 +7,10 @@ import {
   StNewsInfoBox,
   StNewsList,
 } from "./style";
+import Spinner from "../../common/Spinner/Spinner";
 import useFetch from "../../../hooks/useFetch";
 import { getMainNews } from "../../../api/news";
-import Spinner from "../../common/Spinner/Spinner";
+import { Link } from "react-router-dom";
 
 export const NewsListContext = createContext();
 
@@ -39,8 +40,6 @@ export const NewsContainer = ({ children }) => {
 
   // if (result.loading) return <Spinner />;
 
-  // if (result.error) return <Spinner />;
-
   return (
     <NewsListContext.Provider value={{ data, show, onClickButton }}>
       {children}
@@ -68,6 +67,7 @@ export const NewsList = () => {
         {data.map((item) => (
           <NewsItem
             key={item._id}
+            id={item.id}
             title={item.title}
             src={item.image_url}
             date={item.createdAt.split("T")[0]}
@@ -78,6 +78,10 @@ export const NewsList = () => {
   );
 };
 
-export const NewsItem = ({ title, src, date }) => {
-  return <Card title={title} src={src} date={date} />;
+export const NewsItem = ({ id, title, src, date }) => {
+  return (
+    <Link to={"/post/" + id}>
+      <Card title={title} src={src} date={date} />
+    </Link>
+  );
 };

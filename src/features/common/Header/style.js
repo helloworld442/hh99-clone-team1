@@ -78,10 +78,17 @@ export const HeaderNavContentItem = styled.li`
   padding: 16px 24px;
   border-bottom: 1px solid #000;
   background: #fff;
-  font-size: 0.915rem;
-  font-weight: 500;
   &:last-child {
-    color: #b22222;
+    button {
+      color: #b22222;
+    }
+  }
+  button {
+    font-size: 0.915rem;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: transparent;
   }
 `;
 
