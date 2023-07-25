@@ -13,7 +13,7 @@ import { useMutation } from "react-query";
 import { userLogin } from "../../../api/user";
 import { useState } from "react";
 import Logo from "../../../assets/logo.png";
-import googleLogo from "../../../assets/logo-google.png";
+import googleLogo from "../../../assets/logo-google.svg";
 import { NavLogo } from "../../common/Header/HeaderNav";
 import { useDispatch } from "react-redux";
 import { LOGIN_USER } from "../../../redux/reducers/userSlice";
