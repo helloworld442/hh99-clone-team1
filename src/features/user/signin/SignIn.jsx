@@ -13,6 +13,7 @@ import { useMutation } from "react-query";
 import { userLogin } from "../../../api/user";
 import { useState } from "react";
 import Logo from "../../../assets/logo.png";
+import googleLogo from "../../../assets/logo-google.svg";
 import { NavLogo } from "../../common/Header/HeaderNav";
 import { useDispatch } from "react-redux";
 import { LOGIN_USER } from "../../../redux/reducers/userSlice";
@@ -104,11 +105,7 @@ const SignIn = () => {
               className="login-social-google secondary-button"
             >
               <StyledSpan>
-                <img
-                  src="/src/assets/logo-google.svg"
-                  style={{ width: "24px" }}
-                  alt=""
-                />
+                <img src={googleLogo} style={{ width: "24px" }} alt="" />
               </StyledSpan>
               구글로 시작하기
             </StyledButton>
