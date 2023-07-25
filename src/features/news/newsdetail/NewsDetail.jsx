@@ -18,11 +18,9 @@ import {
 } from "./style";
 import logo from "../../../assets/logo.png";
 import { NewsFooter } from "../../common/Footer/Footer";
-import { useSelector } from "react-redux";
 
 const NewsDetail = () => {
   const navigate = useNavigate();
-  const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
 
   return (
     <>
