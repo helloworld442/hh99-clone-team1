@@ -24,7 +24,7 @@ export const HeaderNavBox = styled.div`
   align-items: center;
 `;
 
-export const HeaderNavLogoLink = styled.a`
+export const HeaderNavLogoLink = styled.div`
   width: 240px;
   height: 34px;
   img {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Layout = styled.div`
+const StLayout = styled.div`
   position: relative;
   width: 100vw;
   min-height: 800px;
@@ -9,5 +9,9 @@ const Layout = styled.div`
     min-height: 1200px;
   }
 `;
+
+const Layout = ({ children }) => {
+  return <StLayout>{children}</StLayout>;
+};
 
 export default Layout;
