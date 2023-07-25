@@ -52,7 +52,7 @@ const NewsMobileFooter = () => {
             🔍<span>검색</span>
           </NewsMobiledFooterItem>
         </Link>
-        <Link to="#" onClick={() => setActive(3)}>
+        <Link to="/signin" onClick={() => setActive(3)}>
           <NewsMobiledFooterItem className={active === 3 ? "active" : null}>
             🦔<span>마이페이지</span>
           </NewsMobiledFooterItem>
