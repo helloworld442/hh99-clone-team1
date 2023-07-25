@@ -3,6 +3,7 @@ import { NewsListBox, StNewsList } from "./style";
 import { getMainNews } from "../../../api/news";
 import { useInfiniteData } from "../../../hooks/useInfiniteData";
 import { NewsAddButton } from "../../common/Button/Button";
+import { Link } from "react-router-dom";
 
 export const NewsList = () => {
   const { results, hasNextPage, loadMoreButtonOnClick, isFetchingNextPage } =
@@ -33,8 +34,8 @@ export const NewsList = () => {
 
 export const NewsItem = ({ id, title, src, date }) => {
   return (
-    <a href={"/post/" + id}>
+    <Link to={"/post/" + id}>
       <Card title={title} src={src} date={date} />
-    </a>
+    </Link>
   );
 };

@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 
 export const StNewsInfoBox = styled.div`
+  position: relative;
+  left: 5%;
   width: 100%;
   height: 200px;
-  margin-left: 5%;
-  margin-right: 5%;
   margin-top: 30px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
