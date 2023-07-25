@@ -16,10 +16,10 @@ const NewsDetailDarkMode = () => {
     dispatch(toggleDarkMode());
   };
   return (
-    <NewsDetailDarkModeBox darkModeToggle={darkModeToggle}>
+    <NewsDetailDarkModeBox dark={darkModeToggle}>
       <NewsDetailDarkModeIcon>Icon</NewsDetailDarkModeIcon>
       <NewsDetailDarkModeToggleBox onClick={toggleHandler}>
-        <NewsDetailDarkModeToggleAction darkModeToggle={darkModeToggle}>
+        <NewsDetailDarkModeToggleAction dark={darkModeToggle}>
           Action
         </NewsDetailDarkModeToggleAction>
       </NewsDetailDarkModeToggleBox>

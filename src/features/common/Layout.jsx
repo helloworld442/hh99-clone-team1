@@ -1,9 +1,8 @@
+import { styled, css } from "styled-components";
 import { useSelector } from "react-redux";
-import styled, { css } from "styled-components";
-
 const StLayout = styled.div`
   ${(props) =>
-    props.darkModeToggle &&
+    props.dark &&
     css`
       filter: invert(100%);
     `}
@@ -11,6 +10,7 @@ const StLayout = styled.div`
   width: 100vw;
   min-height: 800px;
   background: #eae7de;
+  z-index: 9999;
   @media screen and (max-width: 1079px) {
     min-height: 1200px;
   }
@@ -18,8 +18,7 @@ const StLayout = styled.div`
 
 const Layout = ({ children }) => {
   const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
-
-  return <StLayout darkModeToggle={darkModeToggle}>{children}</StLayout>;
+  return <StLayout dark={darkModeToggle}>{children}</StLayout>;
 };
 
 export default Layout;

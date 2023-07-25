@@ -4,10 +4,13 @@ import {
   NewsDetailProgressBarBox,
   NewsDetailProgressBarInner,
   NewsDetailProgressBarHeadLine,
+  DarkModeContainer,
 } from "./style";
+import { useSelector } from "react-redux";
 
 const NewsDetailProgressBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
 
   useEffect(() => {
     const updateScrollProgress = () => {
@@ -24,18 +27,19 @@ const NewsDetailProgressBar = () => {
       window.removeEventListener("scroll", updateScrollProgress);
     };
   }, []);
+
   if (window.scrollY <= 115) {
     return null;
   }
   return (
-    <div>
+    <DarkModeContainer dark={darkModeToggle}>
       <NewsDetailProgressBarBox>
         <NewsDetailProgressBarInner style={{ width: `${scrollProgress}%` }} />
         <NewsDetailProgressBarHeadLine>
           🔔띵동! ‘킬러 문항 배제’ 피자가 도착했습니다!
         </NewsDetailProgressBarHeadLine>
       </NewsDetailProgressBarBox>
-    </div>
+    </DarkModeContainer>
   );
 };
 

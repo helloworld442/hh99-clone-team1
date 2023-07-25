@@ -26,6 +26,8 @@ export const HeaderNavBox = styled.div`
 `;
 
 export const HeaderNavLogoLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
   width: 240px;
   height: 34px;
   img {
