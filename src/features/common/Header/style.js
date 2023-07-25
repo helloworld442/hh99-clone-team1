@@ -239,6 +239,9 @@ export const HeaderCatagoryList = styled.ul`
   display: flex;
   gap: 10px;
   align-items: center;
+  .active {
+    border-bottom: 5px solid #333;
+  }
 `;
 
 export const HeaderCatagoryItem = styled.li`
