@@ -34,11 +34,9 @@ const NewsHeaderNav = () => {
 
 export const NavLogo = ({ location, icon }) => {
   return (
-    <Link to={location}>
-      <HeaderNavLogoLink>
-        <img src={icon} />
-      </HeaderNavLogoLink>
-    </Link>
+    <HeaderNavLogoLink to={location}>
+      <img src={icon} />
+    </HeaderNavLogoLink>
   );
 };
 
