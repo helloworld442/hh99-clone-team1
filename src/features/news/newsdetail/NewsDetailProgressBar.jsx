@@ -17,9 +17,7 @@ const NewsDetailProgressBar = () => {
       const percent = (st / (sh - h.clientHeight)) * 100;
 
       setScrollProgress(percent);
-      console.log(percent);
     };
-
     window.addEventListener("scroll", updateScrollProgress);
 
     return () => {

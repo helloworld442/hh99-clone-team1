@@ -1,12 +1,53 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ArrowRightOutlined } from "@ant-design/icons";
+
+export const NewsDetailDarkModeBox = styled.div`
+  ${(props) =>
+    props.darkModeToggle &&
+    css`
+      filter: invert(100%);
+    `}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  width: 95px;
+  height: 32px;
+`;
+export const NewsDetailDarkModeIcon = styled.div`
+  flex-grow: 1;
+  text-indent: -9999px;
+  background-image: url("https://newneek.co/static/media/brightness.8154161a.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+`;
+export const NewsDetailDarkModeToggleBox = styled.div`
+  text-indent: -9999px;
+  width: 51px;
+  height: 32px;
+  border-radius: 99px;
+  background-color: #bdbdbd;
+  position: relative;
+  top: inherit;
+  left: inherit;
+  cursor: pointer;
+`;
+export const NewsDetailDarkModeToggleAction = styled.div`
+  position: absolute;
+  top: 2px;
+  left: ${(props) => (props.darkModeToggle ? "20px" : "2px")};
+  display: block;
+  width: 27px;
+  height: 27px;
+  border-radius: 100%;
+  background-color: #fff;
+`;
 
 export const NewsDetailProgressBarBox = styled.div`
   width: 100%;
   height: 55px;
   background: #fff;
-  border: none;
   border-bottom: 1px solid;
   position: fixed;
   top: 0;
@@ -18,7 +59,6 @@ export const NewsDetailProgressBarInner = styled.div`
   width: 0%;
   height: 55px;
   background: #ff6b00;
-  color: #000;
   overflow: hidden;
   transition: all 0.2s;
 `;
@@ -65,7 +105,7 @@ export const NewsDetailAsideBox = styled.div`
 `;
 export const NewsDetailAsideIcon = styled(ArrowRightOutlined)`
   max-width: 40px;
-  margin-top: -50px;
+  margin-top: -60px;
 `;
 export const NewsDetailAsideText = styled.span`
   font-size: 1.25rem;
@@ -91,7 +131,7 @@ export const NewsDetailHoverText = styled.span`
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.6;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   animation-iteration-count: infinite;
   span {
     margin-left: 50px;
@@ -113,7 +153,7 @@ export const NewsDetailAsideLink = styled(Link)`
   }
   &:hover ${NewsDetailHoverText} {
     opacity: 1;
-    animation: textcycle 20s linear;
+    animation: textcycle 12s linear;
   }
   @-webkit-keyframes textcycle {
     from {
@@ -133,11 +173,10 @@ export const NewsDetailFooterBox = styled.div`
   overflow: hidden;
   margin: 0 auto;
   padding: 4rem 5% 6rem;
-  background: #eae7de;
+  background-color: #eae7de;
   border-top: 1px solid #051619;
   box-sizing: border-box;
   position: relative;
-  z-index: 4;
   @media (max-width: 1360px) {
     padding-top: 3rem;
     padding-bottom: 10rem;
