@@ -54,6 +54,7 @@ export const NewsMobiledFooterBox = styled.div`
   border-top: 2px solid #000;
   box-sizing: border-box;
   background: #fff;
+  z-index: 100;
   @media screen and (min-width: 1079px) {
     display: none;
   }
