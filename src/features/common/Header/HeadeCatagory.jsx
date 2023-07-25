@@ -7,16 +7,16 @@ import {
 
 const catagoryList = [
   { title: "전체", src: "/" },
-  { title: "⚖️정치", src: "/" },
-  { title: "💰경제", src: "/" },
-  { title: "🌐세계", src: "/" },
-  { title: "🤖테크", src: "/" },
-  { title: "💪노동", src: "/" },
-  { title: "🌱환경", src: "/" },
-  { title: "🤝인권", src: "/" },
-  { title: "👥사회", src: "/" },
-  { title: "🎞문화", src: "/" },
-  { title: "🧘라이프", src: "/" },
+  { title: "테슬라", src: "/tesla" },
+  { title: "트위터", src: "/twitter" },
+  { title: "페이팔", src: "/paypal" },
+  { title: "스페이스X", src: "/spaceX" },
+  { title: "X.AI", src: "/XAI" },
+  { title: "도지코인", src: "/doji" },
+  { title: "뉴럴링크", src: "/neuralLink" },
+  { title: "하이퍼루프", src: "/hyperloop" },
+  { title: "솔라시티", src: "/solarcity" },
+  { title: "스타링크", src: "/starlink" },
 ];
 
 const NewsHeaderCatagory = () => {
@@ -25,7 +25,7 @@ const NewsHeaderCatagory = () => {
       <HeaderCatagoryList>
         {catagoryList.map((item, idx) => (
           <HeaderCatagoryItem key={idx}>
-            <Link to={"/posts" + item.src}>{item.title}</Link>
+            <Link to={"/tag" + item.src}>{item.title}</Link>
           </HeaderCatagoryItem>
         ))}
       </HeaderCatagoryList>
