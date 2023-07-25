@@ -6,6 +6,7 @@ import {
   StyledLabel,
 } from "../../user/signup/style";
 import { AuthButton } from "../Button/Button";
+import { Link } from "react-router-dom";
 
 export const HeaderCol = styled.div`
   width: 100%;
@@ -24,7 +25,7 @@ export const HeaderNavBox = styled.div`
   align-items: center;
 `;
 
-export const HeaderNavLogoLink = styled.div`
+export const HeaderNavLogoLink = styled(Link)`
   width: 240px;
   height: 34px;
   img {
