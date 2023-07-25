@@ -9,13 +9,20 @@ export const History = styled.section`
 export const HistoryHead = styled.header`
   margin: 4rem 0 5rem;
   position: relative;
+  span {
+    font-size: 0.915rem;
+    font-weight: 700;
+  }
 `;
 
 export const HistoryUsername = styled.h1`
   margin: 0 0 0.75rem;
-  font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: -.075rem;
+  font-size: 2.3rem;
+  font-weight: 400;
+  letter-spacing: -0.075rem;
+  b {
+    font-weight: 800;
+  }
 `;
 
 export const HistoryHeadActions = styled.div`
@@ -30,6 +37,8 @@ export const HistoryChange = styled.a`
   max-width: 48%;
   color: #051619;
   text-decoration: underline;
+  font-size: 0.925rem;
+  font-weight: 600;
 `;
 
 export const HistoryStatics = styled.a`
@@ -40,6 +49,14 @@ export const HistoryStatics = styled.a`
   font-size: 2rem;
   color: #051619;
   cursor: pointer;
+
+  &:last-child {
+    border-top: none;
+  }
+
+  div {
+    font-weight: 550;
+  }
 
   @media (max-width: 1360px) {
     padding-left: 1.25rem;
