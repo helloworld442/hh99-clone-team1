@@ -34,7 +34,7 @@ const NewsHeaderNav = () => {
 
 export const NavLogo = ({ location, icon }) => {
   return (
-    <HeaderNavLogoLink href={location}>
+    <HeaderNavLogoLink to={location}>
       <img src={icon} />
     </HeaderNavLogoLink>
   );

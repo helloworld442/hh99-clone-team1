@@ -1,4 +1,4 @@
-import styled, {createGlobalStyle} from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   body{
@@ -26,56 +26,61 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
     }
   }
-  `
+  `;
 
 export const PwdForm = styled.form`
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 10rem 5% 20rem;
-  `
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 8rem 5%;
+`;
 
 export const StyledInput = styled.input`
-    display: block;
-    width: 100%;
-    padding: 10px 40px 11px 1.5rem;
-    border: 1px solid #051619;
-    border-radius: 0;
-    box-sizing: border-box;
-    box-shadow: 0;
-    font: inherit;
-    color: #051619;
-    transition: all .2s;
-    outline: none;
-    box-shadow: none;
-`
+  display: block;
+  width: 100%;
+  padding: 10px 1.4rem;
+  border: 1px solid #051619;
+  border-radius: 0;
+  box-sizing: border-box;
+  box-shadow: 0;
+  font: inherit;
+  color: #051619;
+  transition: all 0.2s;
+  outline: none;
+  box-shadow: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+`;
 
 export const StyledButton = styled.button`
-    &:not(:active), &:not(:focus) {
-        outline: 0;
-    }
-    &.password-submit {
-        float: left;
-        width: 200px;
-        max-width: 50%;
-    }
-    &.primary-button {
-        display: inline-block;
-        min-width: 104px;
-        background: #ff6b00;
-        padding: 10px 1.5rem 11px;
-        border-radius: 0;
-        text-align: center;
-        cursor: pointer;
-        position: relative;
-        border-radius: 8px;
-        background: #051619;
-        border: 1px solid #051619;
-        color: #fff;
-    }
+  &:not(:active),
+  &:not(:focus) {
+    outline: 0;
+  }
+  &.password-submit {
+    float: left;
+    width: 200px;
+    max-width: 50%;
+  }
+  &.primary-button {
+    display: inline-block;
+    min-width: 104px;
+    background: #ff6b00;
+    padding: 14px 24px;
+    border-radius: 0;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 8px;
+    background: #051619;
+    border: 1px solid #051619;
+    color: #fff;
+    font-size: 0.925rem;
+    font-weight: 600;
+  }
 `;
 export const StyledLink = styled.a`
-    -webkit-text-decoration-skip: ink;
-    text-decoration-skip-ink: auto;
-    color: #ff6b00;
-    text-decoration: none;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  color: #ff6b00;
+  text-decoration: none;
 `;

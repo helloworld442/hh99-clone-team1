@@ -5,11 +5,13 @@ import { useInfiniteData } from "../../../hooks/useInfiniteData";
 import { NewsAddButton } from "../../common/Button/Button";
 import { Link } from "react-router-dom";
 
-export const NewsList = () => {
+export const NewsCategory = () => {
   const { results, hasNextPage, loadMoreButtonOnClick, isFetchingNextPage } =
-    useInfiniteData("infinite-main", getMainNews);
+    useInfiniteData("infinite-category", getMainNews);
   return (
     <NewsListBox>
+      {/* 각 카테고리 이름 만들기 칸 */}
+      {/* ..................... */}
       <StNewsList>
         {results.map((item) => (
           <NewsItem

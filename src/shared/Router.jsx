@@ -11,6 +11,7 @@ import Register from "../pages/user/Register";
 import ForgotPwd from "../features/user/forgotpwd/ForgotPwd";
 import NewPwd from "../features/user/newpwd/NewPwd";
 import Reads from "../features/user/reads/Reads";
+import Category from "../pages/news/Category";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<Detail />} />
+        <Route path="/tag/:tagId" element={<Category />} />
         <Route path="/search" element={<Search />} />
         <Route path="/search/posts" element={<Post />} />
         <Route path="/forgot" element={<ForgotPwd />} />

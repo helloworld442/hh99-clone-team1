@@ -6,6 +6,7 @@ import {
   StyledLabel,
 } from "../../user/signup/style";
 import { AuthButton } from "../Button/Button";
+import { Link } from "react-router-dom";
 
 export const HeaderCol = styled.div`
   width: 100%;
@@ -24,7 +25,7 @@ export const HeaderNavBox = styled.div`
   align-items: center;
 `;
 
-export const HeaderNavLogoLink = styled.a`
+export const HeaderNavLogoLink = styled(Link)`
   width: 240px;
   height: 34px;
   img {
@@ -75,7 +76,7 @@ export const HeaderNavContentList = styled.ul`
 
 export const HeaderNavContentItem = styled.li`
   width: 250px;
-  padding: 16px 24px;
+  padding: 12px 14px;
   border-bottom: 1px solid #000;
   background: #fff;
   &:last-child {
@@ -85,7 +86,7 @@ export const HeaderNavContentItem = styled.li`
   }
   button {
     font-size: 0.915rem;
-    font-weight: 500;
+    font-weight: 450;
     border: none;
     outline: none;
     background: transparent;
