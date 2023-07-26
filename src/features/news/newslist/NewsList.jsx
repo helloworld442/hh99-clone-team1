@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 export const NewsList = () => {
   const { results, hasNextPage, loadMoreButtonOnClick, isFetchingNextPage } =
     useInfiniteData("infinite-main", getMainNews);
+  console.log(results);
+
   return (
     <NewsListBox>
       <StNewsList>
@@ -17,7 +19,6 @@ export const NewsList = () => {
             id={item.id}
             title={item.title}
             src={item.image_url}
-            date={item.createdAt.split("T")[0]}
           />
         ))}
       </StNewsList>
@@ -32,10 +33,10 @@ export const NewsList = () => {
   );
 };
 
-export const NewsItem = ({ id, title, src, date }) => {
+export const NewsItem = ({ id, title, src }) => {
   return (
     <Link to={"/post/" + id}>
-      <Card title={title} src={src} date={date} />
+      <Card title={title} src={src} />
     </Link>
   );
 };
