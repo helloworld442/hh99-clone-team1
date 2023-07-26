@@ -7,6 +7,11 @@ const getMainNews = async (page) => {
   return response.data;
 };
 
+const getNews = async (id) => {
+  const response = await api.get(`/api/main/${id}`);
+  return response.data;
+};
+
 const getKeyword = async () => {
   const response = await api.get(`/api/keyword`);
   return response.data;
@@ -40,4 +45,4 @@ const getReads = async (page) => {
   return response.data;
 };
 
-export { getMainNews, getKeyword, getSearchResults, getLikes, getReads, getCategoryResults };
+export { getMainNews, getKeyword, getSearchResults, getLikes, getReads, getCategoryResults, getNews };
