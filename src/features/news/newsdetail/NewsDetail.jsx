@@ -72,7 +72,7 @@ const NewsDetail = () => {
             </NewsDetailContentImg>
             <NewsDetailContent>
               <NewsDetailContentHead>{data.result.title}</NewsDetailContentHead>
-              {data.result.content}
+              <div className="content">{data.result.content}</div>
             </NewsDetailContent>
           </NewsDetailContentBox>
 
