@@ -28,13 +28,15 @@ const SignIn = () => {
   const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
   const mutation = useMutation(userLogin, {
     onSuccess: (data) => {
-      dispatch(LOGIN_USER(data));
-      navigate("/");
+      console.log(data);
+      // dispatch(LOGIN_USER(data));
+      // navigate("/");
     },
     onError: (error) => {
-      if (error.response && error.response.data) {
-        setError((prev) => ({ ...prev, password: error.response.data }));
-      }
+      console.log(error);
+      // if (error.response && error.response.data) {
+      //   setError((prev) => ({ ...prev, password: error.response.data }));
+      // }
     },
   });
 
