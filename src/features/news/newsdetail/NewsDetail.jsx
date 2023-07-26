@@ -62,7 +62,7 @@ const NewsDetail = () => {
             </NewsDetailContentImg>
             <NewsDetailContent>
               <NewsDetailContentHead>{data.title}</NewsDetailContentHead>
-              <div className="content">{data.content}</div>
+              <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
             </NewsDetailContent>
           </NewsDetailContentBox>
 
