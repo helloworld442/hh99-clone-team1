@@ -44,7 +44,7 @@ const Card = ({ title, src, date }) => {
   return (
     <StCardBox>
       <StCardImg src={src} />
-      <StCardText size="1.2rem" weight="650">
+      <StCardText size="1rem" weight="650">
         {title}
       </StCardText>
       <StCardText size="0.9rem" weight="500">
