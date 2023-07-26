@@ -19,6 +19,7 @@ export const NewsList = () => {
             id={item.id}
             title={item.title}
             src={item.image_url}
+            date={item.date}
           />
         ))}
       </StNewsList>
@@ -33,10 +34,10 @@ export const NewsList = () => {
   );
 };
 
-export const NewsItem = ({ id, title, src }) => {
+export const NewsItem = ({ id, title, src, date }) => {
   return (
     <Link to={"/post/" + id}>
-      <Card title={title} src={src} />
+      <Card title={title} src={src} date={date} />
     </Link>
   );
 };
