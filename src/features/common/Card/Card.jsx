@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 const StCardBox = styled.div`
+  width: 300px;
   padding-bottom: 30px;
   border-right: 1px solid #333;
   border-bottom: 1px solid #333;
