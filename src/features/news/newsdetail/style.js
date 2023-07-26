@@ -50,9 +50,9 @@ export const NewsDetailProgressBarBox = styled.div`
   ${(props) =>
     props.dark &&
     css`
-      filter: invert(0%);
+      filter: invert(100%);
     `}
-  position: fixed !important;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;

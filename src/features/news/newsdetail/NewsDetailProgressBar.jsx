@@ -4,7 +4,6 @@ import {
   NewsDetailProgressBarBox,
   NewsDetailProgressBarInner,
   NewsDetailProgressBarHeadLine,
-  DarkModeContainer,
 } from "./style";
 import { useSelector } from "react-redux";
 
@@ -32,14 +31,15 @@ const NewsDetailProgressBar = () => {
     return null;
   }
   return (
-    <DarkModeContainer dark={darkModeToggle}>
-      <NewsDetailProgressBarBox>
-        <NewsDetailProgressBarInner style={{ width: `${scrollProgress}%` }} />
-        <NewsDetailProgressBarHeadLine>
-          🔔띵동! ‘킬러 문항 배제’ 피자가 도착했습니다!
-        </NewsDetailProgressBarHeadLine>
-      </NewsDetailProgressBarBox>
-    </DarkModeContainer>
+    <NewsDetailProgressBarBox>
+      <NewsDetailProgressBarInner
+        style={{ width: `${scrollProgress}%` }}
+        dark={darkModeToggle}
+      />
+      <NewsDetailProgressBarHeadLine>
+        🔔띵동! ‘킬러 문항 배제’ 피자가 도착했습니다!
+      </NewsDetailProgressBarHeadLine>
+    </NewsDetailProgressBarBox>
   );
 };
 
