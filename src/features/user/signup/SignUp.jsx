@@ -31,7 +31,10 @@ const SignUp = () => {
     },
     onError: (error) => {
       if (error.response && error.response.data) {
-        setError((prev) => ({ ...prev, nickname: error.response.data }));
+        setError((prev) => ({
+          ...prev,
+          nickname: error.response.data.message,
+        }));
       }
     },
   });
