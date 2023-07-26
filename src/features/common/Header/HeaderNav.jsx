@@ -75,7 +75,7 @@ const NavButton = () => {
     res.mutate();
   }, []);
 
-  if (res.isSuccess && data) path = "#";
+  if (res.isSuccess) path = "#";
 
   return (
     <HeaderNavButtonBox>
