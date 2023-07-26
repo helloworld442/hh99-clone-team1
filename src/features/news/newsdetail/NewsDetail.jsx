@@ -1,13 +1,15 @@
-
-import React from "react";
-import {Link, useNavigate, useParams} from "react-router-dom";
-
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
-  DarkModeContainer,
   NewsDetaiTitleBox,
   NewsDetailCategoryLink,
   NewsDetailTimeText,
   NewsDetailTitle,
+  NewsDetailContentBox,
+  NewsDetailContentImg,
+  NewsDetailContent,
+  NewsDetailContentHead,
+  NewsDetailContentP,
   NewsDetailAsideBox,
   NewsDetailAsideLink,
   NewsDetailAsideText,
@@ -20,51 +22,103 @@ import {
 } from "./style";
 import logo from "../../../assets/logo.png";
 import { NewsFooter } from "../../common/Footer/Footer";
-import { useQuery} from "react-query";
-import {getNews} from "../../../api/news";
-
+import { useParams, useLocation } from "react-router-dom";
+import { useQuery } from "react-query";
+import { getNews } from "../../../api/news";
 const NewsDetail = () => {
   const navigate = useNavigate();
   const { postId } = useParams();
-  const {data, isSuccess} = useQuery(
-    ["detail",postId ],
-    () => getNews(postId));
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  const { data, isSuccess } = useQuery(
+    ["detail", postId],
+    () => getNews(postId),
+    {
+      onSuccess: () => {
+        console.log(data.result);
+      },
+    }
+  );
 
   return (
     <>
-       <NewsDetaiTitleBox>
-        <NewsDetailCategoryLink to="/">정치</NewsDetailCategoryLink>
-        <NewsDetailTitle>
-          🔔띵동! ‘킬러 문항 배제’ 피자가 도착했습니다!
-        </NewsDetailTitle>
-        <NewsDetailTimeText>2023/07/22</NewsDetailTimeText>
-      </NewsDetaiTitleBox>
-      <NewsFooter to="/" />
-      <NewsDetailAsideBox>
-        <NewsDetailAsideLink to="/">
-          <NewsDetailAsideText>안녕하세요</NewsDetailAsideText>
-          <NewsDetailAsideIcon />
-          <NewsDetailHoverText>
-            {textArr.map((item, idx) => (
-              <span key={idx}>{item}</span>
-            ))}
-          </NewsDetailHoverText>
-        </NewsDetailAsideLink>
-      </NewsDetailAsideBox>
-      <NewsDetailFooterBox>
-        <Link to="/" onClick={() => navigate("/")}>
-          <NewsDetailFooterLogo src={logo} alt="newneek logo" />
-        </Link>
-        <NewsDetailMemberInfo>
-          {memberData.map((item) => {
-            return (
-              <NewsDetailMemberLink key={item.id} to="/">
-                {item.member}
-              </NewsDetailMemberLink>
-            );
-          })}
-        </NewsDetailMemberInfo>
-      </NewsDetailFooterBox>
+      {isSuccess && (
+        <>
+          <NewsDetaiTitleBox>
+            <NewsDetailCategoryLink to="/">
+              {data.result[0].category}
+            </NewsDetailCategoryLink>
+            <NewsDetailTitle>{data.result[0].title}</NewsDetailTitle>
+            <NewsDetailTimeText>
+              {new Date(data.result[0].createdAt.replace("Z", ""))
+                .toLocaleDateString("en-CA", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                })
+                .split("/")
+                .join(".")
+                .replace(/-/g, "/")}
+            </NewsDetailTimeText>
+          </NewsDetaiTitleBox>
+
+          <NewsDetailContentBox>
+            <NewsDetailContentImg background={data.result[0].image_url}>
+              이미지
+            </NewsDetailContentImg>
+            <NewsDetailContent>
+              <NewsDetailContentHead>
+                {data.result[0].title}
+              </NewsDetailContentHead>
+              {data.result.slice(0, 2).map((resultItem) => {
+                return resultItem.content.split("\n\n").map((it, idx) => {
+                  return (
+                    <NewsDetailContentP key={idx}>{it}</NewsDetailContentP>
+                  );
+                });
+              })}
+            </NewsDetailContent>
+          </NewsDetailContentBox>
+
+          <NewsFooter to="/" />
+
+          <NewsDetailAsideBox>
+            <NewsDetailAsideLink to="/">
+              <NewsDetailAsideText>
+                오늘까지 <text>588회</text> 뉴스레터를 발행했고&nbsp;
+                <span>
+                  <text>557,632명</text>이 구독했어요!
+                </span>
+              </NewsDetailAsideText>
+              <NewsDetailAsideIcon />
+              <NewsDetailHoverText>
+                {textArr.map((item, idx) => (
+                  <span key={idx}>{item}</span>
+                ))}
+              </NewsDetailHoverText>
+            </NewsDetailAsideLink>
+          </NewsDetailAsideBox>
+
+          <NewsDetailFooterBox>
+            <Link to="/" onClick={() => navigate("/")}>
+              <NewsDetailFooterLogo src={logo} alt="newneek logo" />
+            </Link>
+            <NewsDetailMemberInfo>
+              {memberData.map((item) => {
+                return (
+                  <NewsDetailMemberLink key={item.id} to="/">
+                    {item.member}
+                  </NewsDetailMemberLink>
+                );
+              })}
+            </NewsDetailMemberInfo>
+          </NewsDetailFooterBox>
+        </>
+      )}
     </>
   );
 };
@@ -123,5 +177,4 @@ const memberData = [
   { id: 7, member: "이의진" },
   { id: 8, member: "정기현" },
 ];
-
 export default NewsDetail;
