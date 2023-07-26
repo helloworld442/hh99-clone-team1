@@ -36,8 +36,8 @@ export const NewsList = () => {
 
 export const NewsItem = ({ id, title, src, date }) => {
   return (
-    <Link to={"/post/" + id}>
-      <Card title={title} src={src} date={date} />
-    </Link>
+    // <Link to={"/post/" + id}>
+    <Card title={title} src={src} date={date} />
+    // </Link>
   );
 };
