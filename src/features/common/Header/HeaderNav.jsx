@@ -8,7 +8,7 @@ import {
 } from "./style";
 import navLogo from "../../../assets/logo.png";
 import { UserOutlined, SearchOutlined } from "@ant-design/icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { LOGOUT_USER } from "../../../redux/reducers/userSlice";
@@ -19,7 +19,8 @@ import { useLocation } from "react-router-dom";
 
 const NewsHeaderNav = () => {
   const { pathname } = useLocation();
-  const isDetailPage = pathname.includes("/post/:postId");
+  const { postId } = useParams();
+  const isDetailPage = pathname.includes(`/post/${postId}`);
 
   return (
     <HeaderNavBox>
