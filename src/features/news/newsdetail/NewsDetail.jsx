@@ -63,11 +63,11 @@ const NewsDetail = () => {
               이미지
             </NewsDetailContentImg>
             <NewsDetailContent>
-              <NewsDetailContentHead>{data.title}</NewsDetailContentHead>
+              <NewsDetailContentHead>
+                {data.title.replace("글자크기 설정", "")}
+              </NewsDetailContentHead>
               <div
-                dangerouslySetInnerHTML={{
-                  __html: data.content.replace("글자크기 설정", ""),
-                }}
+                dangerouslySetInnerHTML={{ __html: data.content }}
                 className="content"
               ></div>
             </NewsDetailContent>
