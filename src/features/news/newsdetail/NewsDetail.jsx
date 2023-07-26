@@ -53,7 +53,7 @@ const NewsDetail = () => {
               {data.category}
             </NewsDetailCategoryLink>
             <NewsDetailTitle>
-              {data.title.split("글자크기 설정")[0]}
+              {data.title.replace("글자크기 설정", "")}
             </NewsDetailTitle>
             <NewsDetailTimeText>{data.date}</NewsDetailTimeText>
           </NewsDetaiTitleBox>
@@ -65,7 +65,9 @@ const NewsDetail = () => {
             <NewsDetailContent>
               <NewsDetailContentHead>{data.title}</NewsDetailContentHead>
               <div
-                dangerouslySetInnerHTML={{ __html: data.content }}
+                dangerouslySetInnerHTML={{
+                  __html: data.content.replace("글자크기 설정", ""),
+                }}
                 className="content"
               ></div>
             </NewsDetailContent>
