@@ -2,7 +2,8 @@ import { styled } from "styled-components";
 
 const StCardBox = styled.div`
   padding-bottom: 30px;
-  border-right: 1px solid #333;
+  border-left: 0.5px solid #333;
+  border-right: 0.5px solid #333;
   border-bottom: 1px solid #333;
   display: flex;
   flex-direction: column;
