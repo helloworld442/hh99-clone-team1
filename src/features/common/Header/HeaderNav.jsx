@@ -9,7 +9,7 @@ import {
 import navLogo from "../../../assets/logo.png";
 import { UserOutlined, SearchOutlined } from "@ant-design/icons";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { AUTH_USER, LOGOUT_USER } from "../../../redux/reducers/userSlice";
 import { useMutation } from "react-query";
