@@ -71,14 +71,8 @@ const NewsDetail = () => {
               이미지
             </NewsDetailContentImg>
             <NewsDetailContent>
-              <NewsDetailContentHead>
-                {data.result.title}
-              </NewsDetailContentHead>
-              {data.result.content.split("\n\n").map((it, idx) => {
-                  return (
-                    <NewsDetailContentP key={idx}>{it}</NewsDetailContentP>
-                  );
-                })}
+              <NewsDetailContentHead>{data.result.title}</NewsDetailContentHead>
+              <div className="content">{data.result.content}</div>
             </NewsDetailContent>
           </NewsDetailContentBox>
 
