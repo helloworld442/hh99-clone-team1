@@ -19,7 +19,7 @@ export const NewsCategory = () => {
             id={item.id}
             title={item.title}
             src={item.image_url}
-            date={item.createdAt.split("T")[0]}
+            date={item.date}
           />
         ))}
       </StNewsList>
