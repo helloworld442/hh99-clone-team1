@@ -11,9 +11,9 @@ import { UserOutlined, SearchOutlined } from "@ant-design/icons";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 import { useDispatch } from "react-redux";
-import { LOGOUT_USER } from "../../../redux/reducers/userSlice";
+import { AUTH_USER, LOGOUT_USER } from "../../../redux/reducers/userSlice";
 import { useMutation } from "react-query";
-import { userLogOut } from "../../../api/user";
+import { getAuthToken, userLogOut } from "../../../api/user";
 import NewsDetailDarkMode from "../../news/newsdetail/NewsDetailDarkMode";
 import { useLocation } from "react-router-dom";
 
@@ -63,8 +63,19 @@ const NavContainer = ({ children }) => {
 
 const NavButton = () => {
   const { onToggleNav } = useContext(NavContext);
-  let path = "/signin";
-  if (localStorage.getItem("accessToken")) path = "#";
+  let path = "/sigin";
+  const dispatch = useDispatch();
+  const res = useMutation(getAuthToken, {
+    onSuccess: (data) => {
+      dispatch(AUTH_USER(data));
+    },
+  });
+
+  useEffect(() => {
+    res.mutate();
+  }, []);
+
+  if (res.isSuccess && res.data) path = "#";
 
   return (
     <HeaderNavButtonBox>
