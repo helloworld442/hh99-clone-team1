@@ -12,10 +12,25 @@ import {
   HeaderDescText,
 } from "./style";
 import mainImg from "../../../assets/mainImg.png";
+import { AUTH_USER } from "../../../redux/reducers/userSlice";
+import { useMutation } from "react-query";
+import { getAuthToken } from "../../../api/user";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const NewsHeaderDesc = () => {
-  const accessToken = localStorage.getItem("accessToken");
-  if (accessToken) return;
+  const dispatch = useDispatch();
+  const res = useMutation(getAuthToken, {
+    onSuccess: (data) => {
+      dispatch(AUTH_USER(data));
+    },
+  });
+
+  useEffect(() => {
+    res.mutate();
+  }, []);
+
+  if (res.isSuccess && res.data) return;
 
   return (
     <HeaderDescBox>
