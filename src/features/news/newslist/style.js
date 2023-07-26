@@ -11,6 +11,7 @@ export const NewsListBox = styled.div`
 
 export const StNewsList = styled.ul`
   width: 100%;
+  border-left: 1px solid #333;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
