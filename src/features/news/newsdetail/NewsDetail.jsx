@@ -52,7 +52,9 @@ const NewsDetail = () => {
             <NewsDetailCategoryLink to="/">
               {data.category}
             </NewsDetailCategoryLink>
-            <NewsDetailTitle>{data.title}</NewsDetailTitle>
+            <NewsDetailTitle>
+              {data.title.split("글자크기 설정")[0]}
+            </NewsDetailTitle>
             <NewsDetailTimeText>{data.date}</NewsDetailTimeText>
           </NewsDetaiTitleBox>
 
