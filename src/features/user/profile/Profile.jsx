@@ -40,11 +40,11 @@ const Profile = () => {
         </HistoryHead>
         <HistoryStatics name="read" href="/reads">
           <div><span role="img" aria-label="">📙</span>&nbsp; 끝까지 읽었슴</div>
-          <div>{readSucs && readData.length}</div>
+          <div>{readSucs && readData}</div>
         </HistoryStatics>
         <HistoryStatics name="like" href="/likes">
           <div><span role="img" aria-label="">🧡</span>&nbsp; 좋았슴</div>
-          <div>{likeSucs && likeData.length}</div>
+          <div>{likeSucs && likeData}</div>
         </HistoryStatics>
       </History>
     </Layout>

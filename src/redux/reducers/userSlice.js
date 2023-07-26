@@ -14,7 +14,6 @@ const userSlice = createSlice({
     LOGIN_USER: (state, action) => {
       state.user.email = action.payload.email;
       state.user.nickname = action.payload.nickname;
-      localStorage.setItem("accessToken", action.payload.accesstoken);
     },
     AUTH_USER: (state, action) => {
       state.user.email = action.payload.email;
@@ -23,7 +22,6 @@ const userSlice = createSlice({
     LOGOUT_USER: (state) => {
       state.user.email = null;
       state.user.nickname = null;
-      localStorage.removeItem("accessToken");
     },
   },
 });
