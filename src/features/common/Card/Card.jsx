@@ -15,7 +15,7 @@ const StCardBox = styled.div`
 `;
 
 const StCardImg = styled.img`
-  width: 100%;
+  width: 300px;
   height: 250px;
   margin-bottom: 16px;
   border-bottom: 1px solid #333;
