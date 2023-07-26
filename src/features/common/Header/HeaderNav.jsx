@@ -11,7 +11,7 @@ import { UserOutlined, SearchOutlined } from "@ant-design/icons";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { AUTH_USER } from "../../../redux/reducers/userSlice";
+import { AUTH_USER, LOGOUT_USER } from "../../../redux/reducers/userSlice";
 import { useMutation } from "react-query";
 import { getAuthToken, userLogOut } from "../../../api/user";
 import NewsDetailDarkMode from "../../news/newsdetail/NewsDetailDarkMode";
