@@ -8,16 +8,16 @@ import { useState } from "react";
 
 const catagoryList = [
   { title: "전체", src: "/" },
-  { title: "테슬라", src: "/tag/tesla" },
-  { title: "트위터", src: "/tag/twitter" },
-  { title: "페이팔", src: "/tag/paypal" },
-  { title: "스페이스X", src: "/tag/spaceX" },
+  { title: "테슬라", src: "/tag/테슬라" },
+  { title: "트위터", src: "/tag/트위터" },
+  { title: "페이팔", src: "/tag/페이팔" },
+  { title: "스페이스X", src: "/tag/스페이스X" },
   { title: "X.AI", src: "/tag/XAI" },
-  { title: "도지코인", src: "/tag/doji" },
-  { title: "뉴럴링크", src: "/tag/neuralLink" },
-  { title: "하이퍼루프", src: "/tag/hyperloop" },
-  { title: "솔라시티", src: "/tag/solarcity" },
-  { title: "스타링크", src: "/tag/starlink" },
+  { title: "도지코인", src: "/tag/도지코인" },
+  { title: "뉴럴링크", src: "/tag/뉴럴링크" },
+  { title: "하이퍼루프", src: "/tag/하이퍼루프" },
+  { title: "솔라시티", src: "/tag/솔라시티" },
+  { title: "스타링크", src: "/tag/스타링크" },
 ];
 
 const NewsHeaderCatagory = () => {
