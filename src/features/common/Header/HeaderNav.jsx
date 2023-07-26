@@ -64,18 +64,13 @@ const NavContainer = ({ children }) => {
 const NavButton = () => {
   const { onToggleNav } = useContext(NavContext);
   let path = "/sigin";
-  const dispatch = useDispatch();
-  const res = useMutation(getAuthToken, {
-    onSuccess: (data) => {
-      dispatch(AUTH_USER(data));
-    },
-  });
+  const res = useMutation(userLogOut);
 
   useEffect(() => {
     res.mutate();
   }, []);
 
-  if (res.isSuccess && res.data) path = "#";
+  if (res.isSuccess) path = "#";
 
   return (
     <HeaderNavButtonBox>
