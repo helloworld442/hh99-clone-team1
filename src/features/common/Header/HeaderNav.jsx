@@ -63,7 +63,7 @@ const NavContainer = ({ children }) => {
 
 const NavButton = () => {
   const { onToggleNav } = useContext(NavContext);
-  let path = "/sigin";
+  let path = "/signin";
   const res = useMutation(userLogOut);
 
   useEffect(() => {
