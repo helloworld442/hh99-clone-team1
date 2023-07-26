@@ -44,13 +44,15 @@ const NewsDetail = () => {
     }
   );
 
+  console.log(data.result);
+
   return (
     <>
       {isSuccess && (
         <>
           <NewsDetaiTitleBox>
             <NewsDetailCategoryLink to="/">
-              {data.result.category}
+              {/* {data.result.category} */}
             </NewsDetailCategoryLink>
             <NewsDetailTitle>{data.result.title}</NewsDetailTitle>
             <NewsDetailTimeText>
@@ -83,8 +85,8 @@ const NewsDetail = () => {
               <NewsDetailAsideText>
                 오늘까지 <text>588회</text> 뉴스레터를 발행했고&nbsp;
                 <span>
-<text>557,632명</text>이 구독했어요!
-</span>
+                  <text>557,632명</text>이 구독했어요!
+                </span>
               </NewsDetailAsideText>
               <NewsDetailAsideIcon />
               <NewsDetailHoverText>
