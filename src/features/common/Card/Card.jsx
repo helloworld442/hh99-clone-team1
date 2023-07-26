@@ -28,6 +28,9 @@ const StCardText = styled.span`
   margin: 8px 24px;
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   span {
     font-size: 0.9rem;
     margin-left: 12px;
