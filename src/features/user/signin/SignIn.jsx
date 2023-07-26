@@ -29,8 +29,8 @@ const SignIn = () => {
   const mutation = useMutation(userLogin, {
     onSuccess: (data) => {
       console.log(data);
-      // dispatch(LOGIN_USER(data));
-      // navigate("/");
+      dispatch(LOGIN_USER(data));
+      navigate("/");
     },
     onError: (error) => {
       if (error.response && error.response.data) {
