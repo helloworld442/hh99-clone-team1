@@ -44,78 +44,65 @@ const NewsDetail = () => {
     }
   );
 
-  console.log(data);
-  return;
+  return (
+    <>
+      {isSuccess && (
+        <>
+          <NewsDetaiTitleBox>
+            <NewsDetailCategoryLink to="/">
+              {data.category}
+            </NewsDetailCategoryLink>
+            <NewsDetailTitle>{data.title}</NewsDetailTitle>
+            <NewsDetailTimeText>{data.date}</NewsDetailTimeText>
+          </NewsDetaiTitleBox>
 
-  // return (
-  //   <>
-  //     {isSuccess && (
-  //       <>
-  //         <NewsDetaiTitleBox>
-  //           <NewsDetailCategoryLink to="/">
-  //             {data.result.category}
-  //           </NewsDetailCategoryLink>
-  //           <NewsDetailTitle>{data.result.title}</NewsDetailTitle>
-  //           <NewsDetailTimeText>
-  //             {new Date(data.result.createdAt.replace("Z", ""))
-  //               .toLocaleDateString("en-CA", {
-  //                 year: "numeric",
-  //                 month: "2-digit",
-  //                 day: "2-digit",
-  //               })
-  //               .split("/")
-  //               .join(".")
-  //               .replace(/-/g, "/")}
-  //           </NewsDetailTimeText>
-  //         </NewsDetaiTitleBox>
+          <NewsDetailContentBox>
+            <NewsDetailContentImg background={data.image_url}>
+              이미지
+            </NewsDetailContentImg>
+            <NewsDetailContent>
+              <NewsDetailContentHead>{data.title}</NewsDetailContentHead>
+              <div className="content">{data.content}</div>
+            </NewsDetailContent>
+          </NewsDetailContentBox>
 
-  //         <NewsDetailContentBox>
-  //           <NewsDetailContentImg background={data.result.image_url}>
-  //             이미지
-  //           </NewsDetailContentImg>
-  //           <NewsDetailContent>
-  //             <NewsDetailContentHead>{data.result.title}</NewsDetailContentHead>
-  //             <div className="content">{data.result.content}</div>
-  //           </NewsDetailContent>
-  //         </NewsDetailContentBox>
+          <NewsFooter to="/" />
 
-  //         <NewsFooter to="/" />
+          <NewsDetailAsideBox>
+            <NewsDetailAsideLink to="/">
+              <NewsDetailAsideText>
+                오늘까지 <text>588회</text> 뉴스레터를 발행했고&nbsp;
+                <span>
+                  <text>557,632명</text>이 구독했어요!
+                </span>
+              </NewsDetailAsideText>
+              <NewsDetailAsideIcon />
+              <NewsDetailHoverText>
+                {textArr.map((item, idx) => (
+                  <span key={idx}>{item}</span>
+                ))}
+              </NewsDetailHoverText>
+            </NewsDetailAsideLink>
+          </NewsDetailAsideBox>
 
-  //         <NewsDetailAsideBox>
-  //           <NewsDetailAsideLink to="/">
-  //             <NewsDetailAsideText>
-  //               오늘까지 <text>588회</text> 뉴스레터를 발행했고&nbsp;
-  //               <span>
-  //                 <text>557,632명</text>이 구독했어요!
-  //               </span>
-  //             </NewsDetailAsideText>
-  //             <NewsDetailAsideIcon />
-  //             <NewsDetailHoverText>
-  //               {textArr.map((item, idx) => (
-  //                 <span key={idx}>{item}</span>
-  //               ))}
-  //             </NewsDetailHoverText>
-  //           </NewsDetailAsideLink>
-  //         </NewsDetailAsideBox>
-
-  //         <NewsDetailFooterBox>
-  //           <Link to="/" onClick={() => navigate("/")}>
-  //             <NewsDetailFooterLogo src={logo} alt="newneek logo" />
-  //           </Link>
-  //           <NewsDetailMemberInfo>
-  //             {memberData.map((item) => {
-  //               return (
-  //                 <NewsDetailMemberLink key={item.id} to="/">
-  //                   {item.member}
-  //                 </NewsDetailMemberLink>
-  //               );
-  //             })}
-  //           </NewsDetailMemberInfo>
-  //         </NewsDetailFooterBox>
-  //       </>
-  //     )}
-  //   </>
-  // );
+          <NewsDetailFooterBox>
+            <Link to="/" onClick={() => navigate("/")}>
+              <NewsDetailFooterLogo src={logo} alt="newneek logo" />
+            </Link>
+            <NewsDetailMemberInfo>
+              {memberData.map((item) => {
+                return (
+                  <NewsDetailMemberLink key={item.id} to="/">
+                    {item.member}
+                  </NewsDetailMemberLink>
+                );
+              })}
+            </NewsDetailMemberInfo>
+          </NewsDetailFooterBox>
+        </>
+      )}
+    </>
+  );
 };
 const textArr = [
   "뉴스레터 구독하기",
