@@ -28,7 +28,6 @@ const SignIn = () => {
   const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
   const mutation = useMutation(userLogin, {
     onSuccess: (data) => {
-      console.log(data);
       dispatch(LOGIN_USER(data));
       navigate("/");
     },
