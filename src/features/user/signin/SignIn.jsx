@@ -19,10 +19,13 @@ import { useDispatch } from "react-redux";
 import { LOGIN_USER } from "../../../redux/reducers/userSlice";
 import { AuthInput } from "../../common/Input/Input";
 import { AuthButton } from "../../common/Button/Button";
-
+import { DarkModeContainer } from "../../news/newsdetail/style";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const SignIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
   const mutation = useMutation(userLogin, {
     onSuccess: (data) => {
       dispatch(LOGIN_USER(data));
@@ -92,7 +95,7 @@ const SignIn = () => {
   };
 
   return (
-    <>
+    <DarkModeContainer dark={darkModeToggle}>
       <GlobalStyle />
       <StyledSection>
         <StyledForm name="login" onSubmit={submitLogin}>
@@ -132,8 +135,8 @@ const SignIn = () => {
             {error.password && <p style={{ color: "red" }}>{error.password}</p>}
           </StyledTextField>
           <div>
-            <a
-              href="/forgot"
+            <Link
+              to="/forgot"
               style={{
                 color: "#051619",
                 textDecoration: "underline",
@@ -142,7 +145,7 @@ const SignIn = () => {
               }}
             >
               비밀번호를 잊으셨나요?
-            </a>
+            </Link>
           </div>
           <footer style={{ margin: "1.5rem 0" }}>
             <AuthButton type="submit" style={{ width: "100%" }}>
@@ -155,9 +158,9 @@ const SignIn = () => {
                 textAlign: "center",
               }}
             >
-              <a
+              <Link
                 className="login-option-link"
-                href="/signup"
+                to="/signup"
                 style={{
                   display: "block",
                   width: "100%",
@@ -168,12 +171,12 @@ const SignIn = () => {
                 }}
               >
                 회원가입하기
-              </a>
+              </Link>
             </p>
           </footer>
         </StyledForm>
       </StyledSection>
-    </>
+    </DarkModeContainer>
   );
 };
 

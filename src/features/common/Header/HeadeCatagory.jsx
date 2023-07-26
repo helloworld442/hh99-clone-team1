@@ -4,6 +4,7 @@ import {
   HeaderCatagoryItem,
   HeaderCatagoryList,
 } from "./style";
+import { useState } from "react";
 
 const catagoryList = [
   { title: "전체", src: "/" },
@@ -20,11 +21,16 @@ const catagoryList = [
 ];
 
 const NewsHeaderCatagory = () => {
+  const [active, setActive] = useState(0);
   return (
     <HeaderCatagoryBox>
       <HeaderCatagoryList>
         {catagoryList.map((item, idx) => (
-          <HeaderCatagoryItem key={idx}>
+          <HeaderCatagoryItem
+            key={idx}
+            onClick={() => setActive(idx)}
+            className={active === idx ? "active" : null}
+          >
             <Link to={item.src}>{item.title}</Link>
           </HeaderCatagoryItem>
         ))}

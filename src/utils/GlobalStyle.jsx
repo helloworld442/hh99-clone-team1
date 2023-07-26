@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
     html,body {
         padding : 0;
         margin : 0;
+        font-family: "Noto Sans KR","Apple SD Gothic Neo",sans-serif;
     }
 
 

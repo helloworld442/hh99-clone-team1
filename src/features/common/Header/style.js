@@ -26,6 +26,8 @@ export const HeaderNavBox = styled.div`
 `;
 
 export const HeaderNavLogoLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
   width: 240px;
   height: 34px;
   img {
@@ -239,6 +241,9 @@ export const HeaderCatagoryList = styled.ul`
   display: flex;
   gap: 10px;
   align-items: center;
+  .active {
+    border-bottom: 5px solid #333;
+  }
 `;
 
 export const HeaderCatagoryItem = styled.li`

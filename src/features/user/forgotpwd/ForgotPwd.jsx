@@ -9,9 +9,11 @@ import {
 import { useMutation } from "react-query";
 import { getForgotPwd } from "../../../api/user";
 import { useNavigate } from "react-router-dom";
-
+import { DarkModeContainer } from "../../news/newsdetail/style";
+import { useSelector } from "react-redux";
 const ForgotPwd = () => {
   const navigate = useNavigate();
+  const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const mutation = useMutation(getForgotPwd, {
@@ -19,9 +21,9 @@ const ForgotPwd = () => {
       navigate("/SignIn");
     },
     onError: (error) => {
-      if (error.response && error.response.data) {
-        setError(error.response.data.message);
-        console.log(error.response.data.message);
+      if (error.response && error.response.error) {
+        setError(error.response.data.error);
+        console.log(error.response.data.error);
       }
     },
   });
@@ -50,6 +52,7 @@ const ForgotPwd = () => {
 
   return (
     <>
+      {/* <DarkModeContainer dark={darkModeToggle}> */}
       <GlobalStyle />
       <PwdForm className="password" onSubmit={handleSubmit}>
         <header className="password-head" style={{ marginBottom: "3rem" }}>
@@ -114,11 +117,12 @@ const ForgotPwd = () => {
               }}
             >
               이메일 주소가 떠오르지 않으시나요?
-              <StyledLink href="/signup">가입하기</StyledLink>
+              <StyledLink to="/signup">가입하기</StyledLink>
             </span>
           </footer>
         </section>
       </PwdForm>
+      {/* </DarkModeContainer> */}
     </>
   );
 };
