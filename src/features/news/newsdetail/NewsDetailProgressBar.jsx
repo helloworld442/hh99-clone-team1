@@ -6,11 +6,16 @@ import {
   NewsDetailProgressBarHeadLine,
 } from "./style";
 import { useSelector } from "react-redux";
+import { useQuery } from "react-query";
+import { getNews } from "../../../api/news";
+import { useParams } from "react-router-dom";
 
 const NewsDetailProgressBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isHidden, setIsHidden] = useState(true);
+  const { postId } = useParams();
   const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
-
+  const { data } = useQuery(["detail", postId], () => getNews(postId));
   useEffect(() => {
     const updateScrollProgress = () => {
       const h = document.documentElement;
@@ -19,6 +24,11 @@ const NewsDetailProgressBar = () => {
       const percent = (st / (sh - h.clientHeight)) * 100;
 
       setScrollProgress(percent);
+      if (st > 115) {
+        setIsHidden(false);
+      } else {
+        setIsHidden(true);
+      }
     };
     window.addEventListener("scroll", updateScrollProgress);
 
@@ -26,8 +36,7 @@ const NewsDetailProgressBar = () => {
       window.removeEventListener("scroll", updateScrollProgress);
     };
   }, []);
-
-  if (window.scrollY <= 115) {
+  if (isHidden) {
     return null;
   }
   return (
@@ -37,7 +46,7 @@ const NewsDetailProgressBar = () => {
         dark={darkModeToggle}
       />
       <NewsDetailProgressBarHeadLine>
-        🔔띵동! ‘킬러 문항 배제’ 피자가 도착했습니다!
+        {data.result.title}
       </NewsDetailProgressBarHeadLine>
     </NewsDetailProgressBarBox>
   );

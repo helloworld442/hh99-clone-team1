@@ -84,6 +84,7 @@ export const NewsDetaiTitleBox = styled.div`
   border-bottom: 1px solid #051619;
   text-align: center;
   box-sizing: border-box;
+  margin-bottom: 48px;
 `;
 export const NewsDetailCategoryLink = styled(Link)`
   color: #ff6b00;
@@ -101,8 +102,58 @@ export const NewsDetailTitle = styled.h2`
   word-break: keep-all;
 `;
 export const NewsDetailTimeText = styled.span`
-  font-size: 1.125rem;
+  font-size: 14px;
+  font-weight: 600;
   color: #051619;
+`;
+
+export const NewsDetailContentBox = styled.div`
+  max-width: 45.7142rem;
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+  overflow: hidden;
+`;
+export const NewsDetailContentImg = styled.div`
+  color: transparent !important;
+  width: 550px;
+  height: 450px;
+  margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(${(props) => props.background});
+  @media screen and (max-width: 1079px) {
+    width: 520px;
+    height: 420px;
+  }
+  @media screen and (max-width: 580px) {
+    width: 470px;
+    height: 390px;
+  }
+`;
+export const NewsDetailContent = styled.div`
+  width: 550px;
+  word-break: break-all;
+  height: auto;
+  margin: 0 auto;
+`;
+export const NewsDetailContentHead = styled.h2`
+  font-size: 1.7142rem;
+  line-height: 1.25;
+  margin: 60px 0;
+  @media screen and (max-width: 1079px) {
+    font-size: 20px;
+  }
+`;
+export const NewsDetailContentP = styled.p`
+  color: #051619;
+  font-size: 16px;
+  line-height: 1.625;
+  white-space: wrap;
+  @media screen and (max-width: 1079px) {
+    font-size: 14px;
+  }
 `;
 
 export const NewsDetailAsideBox = styled.div`
