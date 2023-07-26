@@ -14,11 +14,17 @@ import { useDispatch } from "react-redux";
 import { LOGOUT_USER } from "../../../redux/reducers/userSlice";
 import { useMutation } from "react-query";
 import { userLogOut } from "../../../api/user";
+import NewsDetailDarkMode from "../../news/newsdetail/NewsDetailDarkMode";
+import { useLocation } from "react-router-dom";
 
 const NewsHeaderNav = () => {
+  const { pathname } = useLocation();
+  const isDetailPage = pathname.includes("/post/:postId");
+
   return (
     <HeaderNavBox>
       <NavLogo location="/" icon={navLogo} />
+      {isDetailPage && <NewsDetailDarkMode />}
       <NavContainer>
         <NavButton />
         <NavContent />
