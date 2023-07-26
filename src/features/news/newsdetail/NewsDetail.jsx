@@ -38,7 +38,7 @@ const NewsDetail = () => {
     ["detail", postId],
     () => getNews(postId),
     {
-      onSuccess: () => {
+      onSuccess: (data) => {
         console.log(data.result);
       },
     }
@@ -50,11 +50,11 @@ const NewsDetail = () => {
         <>
           <NewsDetaiTitleBox>
             <NewsDetailCategoryLink to="/">
-              {data.result[0].category}
+              {data.result.category}
             </NewsDetailCategoryLink>
-            <NewsDetailTitle>{data.result[0].title}</NewsDetailTitle>
+            <NewsDetailTitle>{data.result.title}</NewsDetailTitle>
             <NewsDetailTimeText>
-              {new Date(data.result[0].createdAt.replace("Z", ""))
+              {new Date(data.result.createdAt.replace("Z", ""))
                 .toLocaleDateString("en-CA", {
                   year: "numeric",
                   month: "2-digit",
@@ -67,20 +67,12 @@ const NewsDetail = () => {
           </NewsDetaiTitleBox>
 
           <NewsDetailContentBox>
-            <NewsDetailContentImg background={data.result[0].image_url}>
+            <NewsDetailContentImg background={data.result.image_url}>
               이미지
             </NewsDetailContentImg>
             <NewsDetailContent>
-              <NewsDetailContentHead>
-                {data.result[0].title}
-              </NewsDetailContentHead>
-              {data.result.slice(0, 2).map((resultItem) => {
-                return resultItem.content.split("\n\n").map((it, idx) => {
-                  return (
-                    <NewsDetailContentP key={idx}>{it}</NewsDetailContentP>
-                  );
-                });
-              })}
+              <NewsDetailContentHead>{data.result.title}</NewsDetailContentHead>
+              {data.result.content}
             </NewsDetailContent>
           </NewsDetailContentBox>
 
