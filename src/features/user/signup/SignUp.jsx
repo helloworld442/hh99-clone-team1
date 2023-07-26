@@ -20,9 +20,11 @@ import { userSignUp } from "../../../api/user";
 import { useNavigate } from "react-router-dom";
 import { AuthInput } from "../../common/Input/Input";
 import { AuthButton } from "../../common/Button/Button";
-
+import { DarkModeContainer } from "../../news/newsdetail/style";
+import { useSelector } from "react-redux";
 const SignUp = () => {
   const navigate = useNavigate();
+  const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
   const mutation = useMutation(userSignUp, {
     onSuccess: () => {
       navigate("/SignIn");
@@ -151,7 +153,7 @@ const SignUp = () => {
   };
 
   return (
-    <>
+    <DarkModeContainer dark={darkModeToggle}>
       <GlobalStyle />
       <StyledSection>
         <StyledForm name="register" onSubmit={submitUser}>
@@ -301,7 +303,7 @@ const SignUp = () => {
           </AuthButton>
         </StyledForm>
       </StyledSection>
-    </>
+    </DarkModeContainer>
   );
 };
 

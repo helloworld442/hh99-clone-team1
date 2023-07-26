@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
@@ -11,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     letter-spacing: -.0125rem;
     margin: 0;
-    background: #eae7de;
+    background-color: #eae7da;
     b, h1, h2, h3, h4, h5, h6, legend, strong, th {
       font-weight: 700;
       color: #051619;
@@ -78,7 +79,7 @@ export const StyledButton = styled.button`
     font-weight: 600;
   }
 `;
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
   color: #ff6b00;
