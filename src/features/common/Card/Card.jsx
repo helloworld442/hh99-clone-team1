@@ -25,7 +25,7 @@ const StCardImg = styled.img`
 `;
 
 const StCardText = styled.span`
-  width: 100px;
+  width: 200px;
   margin: 8px 24px;
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
