@@ -15,7 +15,7 @@ export const NewsDetailDarkModeBox = styled.div`
   align-items: center;
   width: 95px;
   position: absolute;
-  right: 20%;
+  right: 10%;
 `;
 export const NewsDetailDarkModeIcon = styled.div`
   flex-grow: 1;
