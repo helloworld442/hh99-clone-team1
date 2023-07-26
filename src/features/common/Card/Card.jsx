@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 const StCardBox = styled.div`
-  width: 300px;
   padding-bottom: 30px;
   border-right: 1px solid #333;
   border-bottom: 1px solid #333;
@@ -16,7 +15,7 @@ const StCardBox = styled.div`
 `;
 
 const StCardImg = styled.img`
-  width: 300px;
+  width: 100%
   height: 250px;
   margin-bottom: 16px;
   border-bottom: 1px solid #333;
@@ -26,7 +25,7 @@ const StCardImg = styled.img`
 `;
 
 const StCardText = styled.span`
-  width: 300px;
+  width: 100%;
   margin: 8px 24px;
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
