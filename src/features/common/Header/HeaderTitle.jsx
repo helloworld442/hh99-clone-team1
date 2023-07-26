@@ -3,6 +3,7 @@ import { HeaderTitleText } from "./style";
 import { useMutation } from "react-query";
 import { getAuthToken } from "../../../api/user";
 import { AUTH_USER } from "../../../redux/reducers/userSlice";
+import { useEffect } from "react";
 
 const NewsHeaderTitle = () => {
   const dispatch = useDispatch();
