@@ -46,7 +46,7 @@ const NewsDetailProgressBar = () => {
         dark={darkModeToggle}
       />
       <NewsDetailProgressBarHeadLine>
-        {data.result.title}
+        {data.title}
       </NewsDetailProgressBarHeadLine>
     </NewsDetailProgressBarBox>
   );
