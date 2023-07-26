@@ -32,14 +32,14 @@ const getCategoryResults = async (category, page) => {
 };
 
 const getLikes = async (page) => {
-  const response = await api.get(`/api/likes`,{
+  const response = await api.get(`/api/likes`, {
     params: { page },
   });
   return response.data;
 };
 
 const getReads = async (page) => {
-  const response = await api.get(`/api/reads`,{
+  const response = await api.get(`/api/reads`, {
     params: { page },
   });
   return response.data;
