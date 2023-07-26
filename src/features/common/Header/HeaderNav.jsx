@@ -64,13 +64,15 @@ const NavContainer = ({ children }) => {
 const NavButton = () => {
   const { onToggleNav } = useContext(NavContext);
   let path = "/signin";
-  const res = useMutation(userLogOut);
+  const res = useMutation(userLogOut, {
+    onSuccess: (data) => {
+      path = "#";
+    },
+  });
 
   useEffect(() => {
     res.mutate();
   }, []);
-
-  if (res.isSuccess) path = "#";
 
   return (
     <HeaderNavButtonBox>
