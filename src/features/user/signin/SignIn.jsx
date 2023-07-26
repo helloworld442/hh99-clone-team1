@@ -33,7 +33,7 @@ const SignIn = () => {
       // navigate("/");
     },
     onError: (error) => {
-      console.log(error.response.data);
+      console.log(error.response.data.message);
       // if (error.response && error.response.data) {
       //   setError((prev) => ({ ...prev, password: error.response.data }));
       // }
