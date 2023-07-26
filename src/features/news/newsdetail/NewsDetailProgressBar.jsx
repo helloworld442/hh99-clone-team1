@@ -46,7 +46,7 @@ const NewsDetailProgressBar = () => {
         dark={darkModeToggle}
       />
       <NewsDetailProgressBarHeadLine>
-        {data.title}
+        {data.title.replace("글자크기 설정", "")}
       </NewsDetailProgressBarHeadLine>
     </NewsDetailProgressBarBox>
   );
