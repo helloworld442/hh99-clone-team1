@@ -204,6 +204,10 @@ export const HeaderDescButton = styled(AuthButton)`
   &:first-child {
     color: #000;
     background: #fff;
+    &:hover {
+      color: #fff;
+      background: #000;
+    }
   }
   @media screen and (max-width: 1079px) {
     padding: 12px;
