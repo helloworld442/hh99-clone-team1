@@ -67,6 +67,7 @@ const NavButton = () => {
   const res = useMutation(userLogOut, {
     onSuccess: (data) => {
       path = "#";
+      console.log(data, path);
     },
   });
 
