@@ -4,9 +4,9 @@
 
 ##### 뉴닉과 일론머스크의 조합으로 일론머스크의 기사들이 담긴 뉴닉을 제작했습니다.
 
-##### S.A 링크 : https://www.notion.so/2-SA-346bc5586c9b4efcab9c48ed3e9b2371
+##### S.A 링크 : https://efficient-rib-6c7.notion.site/1-NEWNEEK-1-b211a031533b4b9f967c8ad6c01b6928
 
-##### 서비스 링크 : https://fe-mini-project.vercel.app/
+##### 서비스 링크 : https://hh99-clone-team1.vercel.app/
 
 ## 기술 스택
 
