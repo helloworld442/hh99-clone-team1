@@ -45,6 +45,7 @@ const NewsPost = () => {
               title={item.title}
               src={item.image_url}
               date={item.date}
+              category={item.category}
             />
           ))}
         </StNewsList>
