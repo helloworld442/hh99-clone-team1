@@ -13,12 +13,12 @@ const getNews = async (id) => {
 };
 
 const getKeyword = async () => {
-  const response = await api.get(`/api/keyword`);
+  const response = await api.get(`/keyword`);
   return response.data;
 };
 
 const getSearchResults = async (search, page) => {
-  const response = await api.get(`/api/search`, {
+  const response = await api.get(`/search`, {
     params: { q: search, page },
   });
   return response.data;
@@ -45,4 +45,12 @@ const getReads = async (page) => {
   return response.data;
 };
 
-export { getMainNews, getKeyword, getSearchResults, getLikes, getReads, getCategoryResults, getNews };
+export {
+  getMainNews,
+  getKeyword,
+  getSearchResults,
+  getLikes,
+  getReads,
+  getCategoryResults,
+  getNews,
+};
