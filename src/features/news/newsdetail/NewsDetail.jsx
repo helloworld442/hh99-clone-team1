@@ -66,6 +66,7 @@ const NewsDetail = () => {
               <NewsDetailContentHead>
                 {data.title.replace("글자크기 설정", "")}
               </NewsDetailContentHead>
+
               <div
                 dangerouslySetInnerHTML={{ __html: data.content }}
                 className="content"
