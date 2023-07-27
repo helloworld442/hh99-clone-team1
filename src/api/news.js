@@ -2,7 +2,9 @@ import api from "../axios/api";
 
 const getMainNews = async (page) => {
   const response = await api.get(`/api/main`, {
-    params: { page },
+    params: {
+      page,
+    },
   });
   return response.data;
 };
