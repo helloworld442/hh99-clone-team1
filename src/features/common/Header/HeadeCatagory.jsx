@@ -11,7 +11,7 @@ const catagoryList = [
   { title: "테슬라", src: "/tag/테슬라" },
   { title: "트위터", src: "/tag/트위터" },
   { title: "페이팔", src: "/tag/페이팔" },
-  { title: "스페이스X", src: "/tag/스페이스x" },
+  { title: "스페이스X", src: "/tag/스페이드x" },
   { title: "X.AI", src: "/tag/X.AI" },
   { title: "도지코인", src: "/tag/도지코인" },
   { title: "뉴럴링크", src: "/tag/뉴럴링크" },
