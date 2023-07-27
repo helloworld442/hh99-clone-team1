@@ -9,10 +9,24 @@ import {
   NewsKeywordItemBox,
 } from "./style";
 import { Link, useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
+import { getKeyword } from "../../../api/news";
+import Spinner from "../../common/Spinner/Spinner";
 
 const NewsSearch = () => {
+  const [keyword, setKeyword] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
+  const { isLoading, isSuccess, data, isError } = useQuery(
+    "news-detail",
+    getKeyword
+  );
+
+  if (isLoading) return <Spinner />;
+
+  if (isSuccess && data) setKeyword(data);
+
+  console.log(keyword);
 
   return (
     <NewsSearchLayout>
@@ -44,7 +58,7 @@ const NewsSearch = () => {
         <NewsKeywordTitle>고슴이 추천 키워드</NewsKeywordTitle>
         <NewsKeywordItemBox>
           <Link>한미정상회담</Link>
-          <Link>2</Link>
+          <Link></Link>
           <Link>3</Link>
           <Link>4</Link>
           <Link>5</Link>
