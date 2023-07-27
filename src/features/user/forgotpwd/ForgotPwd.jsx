@@ -11,6 +11,7 @@ import { getForgotPwd } from "../../../api/user";
 import { useNavigate } from "react-router-dom";
 import { DarkModeContainer } from "../../news/newsdetail/style";
 import { useSelector } from "react-redux";
+import Spinner from "../../common/Spinner/Spinner";
 const ForgotPwd = () => {
   const navigate = useNavigate();
   const darkModeToggle = useSelector((state) => state.darkMode.darkModeToggle);
@@ -49,6 +50,8 @@ const ForgotPwd = () => {
     }
     mutation.mutate(email);
   };
+
+  if (mutation.isLoading) return <Spinner />;
 
   return (
     <>
