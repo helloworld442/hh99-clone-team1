@@ -30,14 +30,11 @@ const NewsPost = () => {
     data.pages.forEach((page) => results.push(...page.content));
   }
 
-  console.log(data.pages[0].totalElements);
+  console.log(data);
 
   return (
     <>
-      <NewsInfoBox
-        title={keyword}
-        length={data && data.pages[0].totalElements}
-      />
+      <NewsInfoBox title={keyword} length={0} />
       <NewsListBox>
         <StNewsList>
           {results.map((item) => (
