@@ -33,7 +33,10 @@ const SignIn = () => {
     },
     onError: (error) => {
       if (error.response && error.response.data) {
-        setError((prev) => ({ ...prev, password: error.response.data }));
+        setError((prev) => ({
+          ...prev,
+          password: error.response.data.message,
+        }));
       }
     },
   });

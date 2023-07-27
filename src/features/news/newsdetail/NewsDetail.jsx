@@ -50,35 +50,27 @@ const NewsDetail = () => {
         <>
           <NewsDetaiTitleBox>
             <NewsDetailCategoryLink to="/">
-              {data.result.category}
+              {data.category}
             </NewsDetailCategoryLink>
-            <NewsDetailTitle>{data.result.title}</NewsDetailTitle>
-            <NewsDetailTimeText>
-              {new Date(data.result.createdAt.replace("Z", ""))
-                .toLocaleDateString("en-CA", {
-                  year: "numeric",
-                  month: "2-digit",
-                  day: "2-digit",
-                })
-                .split("/")
-                .join(".")
-                .replace(/-/g, "/")}
-            </NewsDetailTimeText>
+            <NewsDetailTitle>
+              {data.title.replace("글자크기 설정", "")}
+            </NewsDetailTitle>
+            <NewsDetailTimeText>{data.date}</NewsDetailTimeText>
           </NewsDetaiTitleBox>
 
           <NewsDetailContentBox>
-            <NewsDetailContentImg background={data.result.image_url}>
+            <NewsDetailContentImg background={data.image_url}>
               이미지
             </NewsDetailContentImg>
             <NewsDetailContent>
               <NewsDetailContentHead>
-                {data.result.title}
+                {data.title.replace("글자크기 설정", "")}
               </NewsDetailContentHead>
-              {data.result.content.split("\n\n").map((it, idx) => {
-                  return (
-                    <NewsDetailContentP key={idx}>{it}</NewsDetailContentP>
-                  );
-                })}
+
+              <div
+                dangerouslySetInnerHTML={{ __html: data.content }}
+                className="content"
+              ></div>
             </NewsDetailContent>
           </NewsDetailContentBox>
 
@@ -89,8 +81,8 @@ const NewsDetail = () => {
               <NewsDetailAsideText>
                 오늘까지 <text>588회</text> 뉴스레터를 발행했고&nbsp;
                 <span>
-<text>557,632명</text>이 구독했어요!
-</span>
+                  <text>557,632명</text>이 구독했어요!
+                </span>
               </NewsDetailAsideText>
               <NewsDetailAsideIcon />
               <NewsDetailHoverText>

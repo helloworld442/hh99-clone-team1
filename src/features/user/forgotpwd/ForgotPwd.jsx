@@ -21,9 +21,9 @@ const ForgotPwd = () => {
       navigate("/SignIn");
     },
     onError: (error) => {
-      if (error.response && error.response.error) {
-        setError(error.response.data.error);
-        console.log(error.response.data.error);
+      if (error.response && error.response.data) {
+        setError(error.response.data.message);
+        console.log(error.response.data.message);
       }
     },
   });

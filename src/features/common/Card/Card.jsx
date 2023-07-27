@@ -2,7 +2,8 @@ import { styled } from "styled-components";
 
 const StCardBox = styled.div`
   padding-bottom: 30px;
-  border-right: 1px solid #333;
+  border-left: 0.5px solid #333;
+  border-right: 0.5px solid #333;
   border-bottom: 1px solid #333;
   display: flex;
   flex-direction: column;
@@ -25,9 +26,13 @@ const StCardImg = styled.img`
 `;
 
 const StCardText = styled.span`
+  width: 200px;
   margin: 8px 24px;
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   span {
     font-size: 0.9rem;
     margin-left: 12px;
@@ -40,15 +45,15 @@ const StCardText = styled.span`
  * @param {string} date 게시글 날짜
  */
 
-const Card = ({ title, src, date }) => {
+const Card = ({ title, src, date, category }) => {
   return (
     <StCardBox>
       <StCardImg src={src} />
-      <StCardText size="1.2rem" weight="650">
+      <StCardText size="1rem" weight="650">
         {title}
       </StCardText>
       <StCardText size="0.9rem" weight="500">
-        {date} <span>사회</span>
+        {date} <span>{category}</span>
       </StCardText>
     </StCardBox>
   );

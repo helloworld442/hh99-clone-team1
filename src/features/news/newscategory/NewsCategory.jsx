@@ -19,7 +19,8 @@ export const NewsCategory = () => {
             id={item.id}
             title={item.title}
             src={item.image_url}
-            date={item.createdAt.split("T")[0]}
+            date={item.date}
+            category={item.category}
           />
         ))}
       </StNewsList>
@@ -34,10 +35,10 @@ export const NewsCategory = () => {
   );
 };
 
-export const NewsItem = ({ id, title, src, date }) => {
+export const NewsItem = ({ id, title, src, date, category }) => {
   return (
     <Link to={"/post/" + id}>
-      <Card title={title} src={src} date={date} />
+      <Card title={title} src={src} date={date} category={category} />
     </Link>
   );
 };
