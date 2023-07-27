@@ -9,7 +9,7 @@ import {
   NewsKeywordItemBox,
 } from "./style";
 import { Link, useNavigate } from "react-router-dom";
-import { useMutation, useQuery } from "react-query";
+import { useMutation } from "react-query";
 import { getKeyword } from "../../../api/news";
 import Spinner from "../../common/Spinner/Spinner";
 
