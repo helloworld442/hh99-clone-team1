@@ -14,7 +14,7 @@ const userLogOut = async () => {
 };
 
 const getForgotPwd = async (email) => {
-  const response = await api.get("/api/pwd/forgot", email);
+  const response = await api.post("/api/pwd/forgot", {email: email});
   return response.data;
 };
 
