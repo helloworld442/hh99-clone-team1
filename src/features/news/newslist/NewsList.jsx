@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 export const NewsList = () => {
   const { results, hasNextPage, loadMoreButtonOnClick, isFetchingNextPage } =
     useInfiniteData("infinite-main", getMainNews);
-  console.log(results);
 
   return (
     <NewsListBox>
