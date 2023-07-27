@@ -109,9 +109,8 @@ export const HeaderTitleText = styled.h1`
 
 export const HeaderDescBox = styled.div`
   position: relative;
-  max-width: 800px;
+  width: 100%;
   padding: 2rem 0 3rem;
-  margin: 0 auto;
   box-sizing: border-box;
   background: #ff6b00;
   overflow: hidden;
