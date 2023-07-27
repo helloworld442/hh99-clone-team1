@@ -45,7 +45,7 @@ const StCardText = styled.span`
  * @param {string} date 게시글 날짜
  */
 
-const Card = ({ title, src, date }) => {
+const Card = ({ title, src, date, category }) => {
   return (
     <StCardBox>
       <StCardImg src={src} />
@@ -53,7 +53,7 @@ const Card = ({ title, src, date }) => {
         {title}
       </StCardText>
       <StCardText size="0.9rem" weight="500">
-        {date} <span>사회</span>
+        {date} <span>{category}</span>
       </StCardText>
     </StCardBox>
   );
