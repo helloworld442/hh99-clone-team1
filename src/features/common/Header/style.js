@@ -120,6 +120,7 @@ export const HeaderDescBox = styled.div`
 `;
 
 export const HeaderDescInnerBox = styled.div`
+  min-width: 600px;
   max-width: 1200px;
   padding: 0 10rem;
   display: flex;
