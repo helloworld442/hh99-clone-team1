@@ -8,7 +8,7 @@ const StLayout = styled.div`
     `}
   position: relative;
   width: 100vw;
-  min-height: 800px;
+  min-height: 1200px;
   background: #eae7de;
   z-index: 9999;
   @media screen and (max-width: 1079px) {
