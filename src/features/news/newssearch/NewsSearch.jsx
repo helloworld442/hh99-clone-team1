@@ -22,7 +22,7 @@ const NewsSearch = () => {
       setKeyword(data);
     },
     onError: (err) => {
-      alert(err);
+      alert("검색창에서 에러가 뜹니다. 관리자에게 문의하세요!");
     },
   });
 
@@ -31,9 +31,6 @@ const NewsSearch = () => {
   }, []);
 
   if (res.isLoading) return <Spinner />;
-
-  if (res.isError)
-    return alert("검색창에서 에러가 뜹니다. 관리자에게 문의하세요!");
 
   return (
     <NewsSearchLayout>
