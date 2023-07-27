@@ -30,7 +30,10 @@ const NewsSearch = () => {
     res.mutate();
   }, []);
 
-  console.log(keyword);
+  if (res.isLoading) return <Spinner />;
+
+  if (res.isError)
+    return alert("검색창에서 에러가 뜹니다. 관리자에게 문의하세요!");
 
   return (
     <NewsSearchLayout>
@@ -61,12 +64,9 @@ const NewsSearch = () => {
       <NewsKeywordBox>
         <NewsKeywordTitle>고슴이 추천 키워드</NewsKeywordTitle>
         <NewsKeywordItemBox>
-          <Link>한미정상회담</Link>
-          <Link></Link>
-          <Link>3</Link>
-          <Link>4</Link>
-          <Link>5</Link>
-          <Link>6</Link>
+          {keyword.map((item) => (
+            <Link to={"/search/posts?keyword=" + item}>{item}</Link>
+          ))}
         </NewsKeywordItemBox>
       </NewsKeywordBox>
     </NewsSearchLayout>
