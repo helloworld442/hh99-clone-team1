@@ -30,6 +30,8 @@ const NewsPost = () => {
     data.pages.forEach((page) => results.push(...page.content));
   }
 
+  console.log(data.pages[0].totalElements);
+
   return (
     <>
       <NewsInfoBox
@@ -44,7 +46,7 @@ const NewsPost = () => {
               id={item.id}
               title={item.title}
               src={item.image_url}
-              date={item.createdAt.split("T")[0]}
+              date={item.date}
             />
           ))}
         </StNewsList>
