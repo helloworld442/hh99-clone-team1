@@ -32,7 +32,10 @@ const NewsPost = () => {
 
   return (
     <>
-      <NewsInfoBox title={keyword} length={data.pages[0].totalElements} />
+      <NewsInfoBox
+        title={keyword}
+        length={data && data.pages[0].totalElements}
+      />
       <NewsListBox>
         <StNewsList>
           {results.map((item) => (
