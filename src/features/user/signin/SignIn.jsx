@@ -22,6 +22,7 @@ import { AuthButton } from "../../common/Button/Button";
 import { DarkModeContainer } from "../../news/newsdetail/style";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Spinner from "../../common/Spinner/Spinner";
 const SignIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -96,6 +97,8 @@ const SignIn = () => {
     };
     mutation.mutate(sendData);
   };
+
+  if (mutation.isLoading) return <Spinner />;
 
   return (
     <DarkModeContainer dark={darkModeToggle}>
