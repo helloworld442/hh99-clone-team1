@@ -6,8 +6,6 @@ import { NewsAddButton } from "../../common/Button/Button";
 import { Link, useParams } from "react-router-dom";
 
 export const NewsCategory = () => {
-  const { path } = useParams();
-  console.log(path);
   const { results, hasNextPage, loadMoreButtonOnClick, isFetchingNextPage } =
     useInfiniteData("infinite-category", getMainNews);
   return (
