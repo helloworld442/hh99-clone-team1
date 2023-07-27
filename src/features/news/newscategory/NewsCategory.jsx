@@ -3,7 +3,7 @@ import { NewsListBox, StNewsList } from "./style";
 import { getMainNews } from "../../../api/news";
 import { useInfiniteData } from "../../../hooks/useInfiniteData";
 import { NewsAddButton } from "../../common/Button/Button";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const NewsCategory = () => {
   const { results, hasNextPage, loadMoreButtonOnClick, isFetchingNextPage } =
