@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const StNewsInfoBox = styled.div`
   position: relative;
   left: 5%;
-  width: 100%;
+  width: 90%;
   height: 200px;
   margin-top: 30px;
   border-bottom: 1px solid #333;

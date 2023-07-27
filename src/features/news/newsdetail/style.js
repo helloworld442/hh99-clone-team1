@@ -137,6 +137,11 @@ export const NewsDetailContent = styled.div`
   word-break: break-all;
   height: auto;
   margin: 0 auto;
+  .content {
+    line-height: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 `;
 export const NewsDetailContentHead = styled.h2`
   font-size: 1.7142rem;
