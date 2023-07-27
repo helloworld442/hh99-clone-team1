@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   NewsSearchLayout,
   NewsSearchInputBox,
@@ -9,7 +9,7 @@ import {
   NewsKeywordItemBox,
 } from "./style";
 import { Link, useNavigate } from "react-router-dom";
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import { getKeyword } from "../../../api/news";
 import Spinner from "../../common/Spinner/Spinner";
 
@@ -17,14 +17,18 @@ const NewsSearch = () => {
   const [keyword, setKeyword] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
-  const { isLoading, isSuccess, data, isError } = useQuery(
-    "news-detail",
-    getKeyword
-  );
+  const res = useMutation("news-search", getKeyword, {
+    onSuccess: (data) => {
+      setKeyword(data);
+    },
+    onError: (err) => {
+      alert(err);
+    },
+  });
 
-  if (isLoading) return <Spinner />;
-
-  if (isSuccess && data) setKeyword(data);
+  useEffect(() => {
+    res.mutate();
+  }, []);
 
   console.log(keyword);
 
